@@ -31,6 +31,7 @@ public class Crawl01Main {
 /* 네이버 뉴스 캐스트 (상단의 실시간뉴스)
  * 
  */
+	//남윤주
 	public static void main(String[] args) throws IOException {
 		System.out.println("네이버 뉴스 캐스트 크롤링");
 		
