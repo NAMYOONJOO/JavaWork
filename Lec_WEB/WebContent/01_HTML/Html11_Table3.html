@@ -4,105 +4,134 @@
 <meta charset="UTF-8">
 <title>Table3</title>
 <style>
-table, tr, td{
-	border: 0.5px solid black /* 두께. 선종료, 선ㄴ색상 */;
+.table1 table, .table1 tr, .table1 td {
+	border: 0.5px solid black; /* 두께. 선종료, 선ㄴ색상 */;
 	border-collapse: collapse; /* border 간격 붙이기 */
-	padding: 20px
+	padding: 20px;
+}
+.table1 table{
+	width: 500px
+}
+.table2 table{
+	border-collapse: collapse;
+}
+.table2 td {
+	border: 8px solid black; /* 두께. 선종료, 선ㄴ색상 */;
+}
+
+
+.table2 table tr:first-child td {
+  border-top: 0;
+}
+.table2 table tr td:first-child {
+  border-left: 0;
+}
+.table2 table tr:last-child td {
+  border-bottom: 0;
+}
+.table2 table tr td:last-child {
+  border-right: 0;
+}
+td#left{
+	border-left: 8px solid black;
+	border-bottom: 0;
 }
 </style>
 </head>
 <body>
+	<div class="table1">
+	<a>Table1</a><br>
+		<table >
+			<tr>
+				<td rowspan="3"></td>
+				<td colspan="3"></td>
+			</tr>
+			<tr>
+				<td colspan="3"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+		<br>
+		<a>Table2</a><br>
+		<table>
+			<tr>
+				<td rowspan="3"></td>
+				<td colspan="3"></td>
+			</tr>
+			<tr>
+				<td colspan="2"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+		<br><a>Table3</a><br>
+		<table>
+			<tr>
+				<td></td>
+				<td colspan="2" rowspan="2"></td>
+				<td rowspan="3"></td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+
+		</table>
+	</div>
+
+	<br>
+	<br>
+	<hr>
+	<br>
+<a>윤주</a><br>
+	<div class="table2">
+		<table style="width: 400px;height: 400px;">
+			<tr class="top" style="height: 40px;">
+				<td colspan="2" style="background-color: rgb(233,234,239);"></td>
+				<td colspan="2" style="background-color: rgb(233,234,239);"></td>
+				<td colspan="2" style="background-color: rgb(255,223,78);"></td>
+				<td rowspan="4" style="width: 9px;background-color: rgb(233,234,239);"></td>
+			</tr>
+			<tr style="height: 125px">
+				<td style="width: 25px"></td>
+				<td style="background-color: rgb(246,91,69);" colspan="3" rowspan="2" ></td>
+				<td colspan="2" style="background-color: rgb(255,223,78);"></td>
+				
+			</tr>
+			<tr>
+				<td rowspan="2"></td>
+				<td style="height: 120px"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td id="left" colspan="2" rowspan="2" style="background-color: rgb(0,0,0); width:6px"></td>
+				<td style="width: 98px;height:50px;hebackground-color: rgb(233,234,239)"></td>
+				<td colspan="2"></td>
+			</tr>
+			<tr>
+				<td style="background-color: rgb(255,223,78);"></td>
+				<td style="background-color: rgb(233,234,239);height: 40px"></td>
+				<td colspan="2" style="background-color: rgb(33,55,99);"></td>
+				<td style="background-color: rgb(246,91,69);"></td>
+			</tr>
+		</table>
+	</div>
+	<br>
 	
-	<table style="width: 100%">
-		<tr>
-			<td rowspan="3"></td>
-			<td colspan="3"></td>
-		</tr>
-		<tr>
-			<td colspan="3"></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-	</table>
-	<br>
-	<br>
-	<table style="width: 100%">
-		<tr>
-			<td rowspan="3"></td>
-			<td colspan="3"></td>
-		</tr>
-		<tr>
-			<td colspan="2"></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-	</table>
-	<br>
-	<br>
-	<table style="width: 100%">
-		<tr>
-			<td></td>
-			<td colspan="2" rowspan="2"></td>
-			<td rowspan="3"></td>
-		</tr>
-		<tr>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-
-	</table>
-
-<br>
-<br>
-<br>
-	<table border="5px">
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-	</table>
+	<a>몬드리안</a><br>
+	<img alt="mon" src="../img/mon.png" style="width: 400px;height: 400px">
 
 </body>
 </html>
