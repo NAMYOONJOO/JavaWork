@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Table2</title>
+<style>
+table, th, td {
+	border: 1px solid black; /* 두께, 선종류, 선색상 */
+	border-collapse: collapse; /* border 붙이기 */
+}
+
+th, td {
+	padding: 15px; /* 셀 안쪽의 컨텐트와 border 사이 여백 */
+}
+
+th {
+	text-align: left;
+}
+</style>
+
+
+
+</head>
+
+
+<!-- 
+colspan : 열병합
+rowspan : 행병합 
+-->
+<body>
+	<table style="width: 100%">
+		<thead>
+			<tr>
+				<th>1</th>
+				<th colspan="2">2</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td rowspan="2">4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+			<tr>
+
+				<td>8</td>
+				<td>9</td>
+			</tr>
+		</tbody>
+
+	</table>
+	<hr>
+	<table style="width: 100%">
+		<thead>
+			<tr>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td colspan="3">4</td>
+				
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+		</tbody>
+
+	</table>
+	<hr>
+	<table style="width: 100%">
+			<tr>
+				<th colspan="2" rowspan="2">1</th>
+				<th>3</th>
+			</tr>
+			<tr>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+	</table>
+	<hr>
+	<table style="width: 100%">
+			<tr>
+				<th>1</th>
+				<th rowspan="2">2</th>
+				<th>3</th>
+			</tr>
+			<tr>
+				<td rowspan="2">4</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+	</table>
+
+
+</body>
+</html>

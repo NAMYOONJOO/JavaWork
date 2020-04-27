@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>CSS</title>
+<link rel="stylesheet" href="CSS/styles.css">
+<style>
+body {
+	background-color: lightCoral;
+}
+
+h1 {
+	color: blue;
+}
+
+p {
+	color: red
+}
+</style>
+
+<style>
+p {
+	border: 5px solid tomato;
+	/* 안쪽 여백 : padding, border~content 간격 */
+	padding: 30px; /*css 주석 */
+	/* 외부 여백  : margin, border ~ 외부 element 간격*/
+	margin: 50px;
+}
+
+#p01 { /* id가 p01 인 element */
+	color: yellow;
+}
+
+.error { /* class 에 error를 갖고 있는 element */
+	color: DarkOrange;
+}
+</style>
+
+
+</head>
+
+<!--
+CSS : Cascading Style Sheets.
+ HTML elements 들이 화면상에 어떻게 표시될지 기술함.
+ 
+적용방식 3가지
+1. Inline : 시작태그에 style 속성과 함께 기술
+2. Internal : <head> 안에 <style> 태그로 기술
+3. External : 외부 파일 (*.css) 로 만들고 연결
+-->
+
+<body>
+
+	<h1>This is a heading1</h1>
+	<p>This is a paragraph1</p>
+	<h1>This is a heading2</h1>
+	<p style="color: LightCoral">This is a paragraph2</p>
+
+	<hr>
+
+	<h1>This is a heading3</h1>
+	<p>This is a paragraph3</p>
+	<p id="p01">I am different1</p>
+
+	<hr>
+
+	<p>This is a paragraph4</p>
+	<p>This is a paragraph5</p>
+	<p class="error">I am different2.</p>
+	<p>This is a paragraph6</p>
+	<p class="error">I am different too3.</p>
+
+</body>
+</html>
+
