@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>캘린더 폼 작성</title>
+<link
+	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
+	rel="stylesheet">
+<style>
+ul {
+	list-style-type: none; /* disc 모양 없애기 */
+	background-color: rgb(247, 247, 247);
+	overflow: hidden;
+	width: 570px;
+	border: 1px solid rgb(220, 220, 220);
+}
+
+li {
+	float: left; /* 줄바꿈 했던 li를 일렬로 좌측 정렬 */
+	width: 142px;
+}
+
+li a {
+	font-family: 'Do Hyeon', sans-serif;
+	text-decoration: none;
+	padding: 15px;
+	color: rgb(100, 100, 100);
+	display: block;
+}
+
+body {
+	font-family: 'Do Hyeon', sans-serif;
+}
+
+#date h {
+	font-size: 30px;
+	
+}
+
+a#here {
+	background-color: rgb(49, 139, 207);
+	color: white;
+}
+
+#calander td, #calander th,#calander table {
+	border: 1px solid rgb(200, 200, 200);
+	border-collapse: collapse;
+	color: rgb(100,100,100);
+}
+
+#table2 td {
+	width: 77px;
+	height: 40px;
+	padding: 5px;
+}
+
+table#table3 td,table#table3 th{
+	color: rgb(50,50,50);
+	font-size: 10px;
+	text-align: center;
+	height: 17px;
+}
+#bottom td, #bottom th,#bottom table {
+	border: 1px solid rgb(200, 200, 200);
+	border-collapse: collapse;
+	color: rgb(100,100,100);
+}
+#bottom table {
+	border-left: 0;
+	border-right: 0;
+}
+#table3 tr td:first-child,#table3 tr th:first-child {
+border-left: 0;
+}
+#table3 tr td:last-child,#table3 tr th:last-child {
+border-right: 0;
+}
+#bottom a{
+font-size: 11px;
+}
+
+</style>
+</head>
+<body style="width: 600;">
+	<div id="menu">
+		<ul>
+			<li><a>정책 차림표</a></li>
+			<li><a>미리보는 지원사업</a></li>
+			<li><a>마감임박 지원사업</a></li>
+			<li><a id="here">접수중인 지원사업</a></li>
+		</ul>
+	</div>
+	<div id="date">
+		<h style="color: rgb(180, 180, 180);padding-left: 200px" > &lt </h> <h
+			style="color: rgb(57, 149, 210);">2020-04-28</h> <h
+			style="color: rgb(180, 180, 180)"> &gt </h>
+	</div>
+	<div id="calander">
+		<table id="table1" style="width: 600px;margin: 5px">
+			<tr>
+				<td>
+				<input type="radio" name="choice" value="전체" checked="checked"/> 전체 <input
+					type="radio" name="choice" value="창업벤처" /> 창업.벤처 <input
+					type="radio" name="choice" value="소상공인" /> 소상공인 <input
+					type="radio" name="choice" value="판로수출" /> 판로.수출 <input
+					type="radio" name="choice" value="RB" /> R&B <input type="radio"
+					name="choice" value="금융세제" /> 금융.세제 <input type="radio"
+					name="choice" value="인력" /> 인력</td>
+			</tr>
+			<tr>
+				<td>
+					<table id=table2>
+						<tr style="background-color: rgb(238,238,238); height: 30px">
+							<th>일</th>
+							<th>월</th>
+							<th>화</th>
+							<th>수</th>
+							<th>목</th>
+							<th>금</th>
+							<th>토</th>
+						</tr>
+						<tr>
+							<td style="background-color: rgb(250,250,250)"></td>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+						</tr>
+						<tr>
+							<td style="background-color: rgb(209,253,253)">7</td>
+							<td>8</td>
+							<td>9</td>
+							<td>10</td>
+							<td>11</td>
+							<td>12</td>
+							<td>13</td>
+						</tr>
+						<tr>
+							<td>14</td>
+							<td>15</td>
+							<td>16</td>
+							<td>17</td>
+							<td>18</td>
+							<td>19</td>
+							<td>20</td>
+						</tr>
+						<tr>
+							<td>21</td>
+							<td>22</td>
+							<td>23</td>
+							<td>24</td>
+							<td>25</td>
+							<td>26</td>
+							<td>27</td>
+						</tr>
+						<tr>
+							<td>28</td>
+							<td>29</td>
+							<td>30</td>
+							<td style="background-color: rgb(250,250,250)"></td>
+							<td style="background-color: rgb(250,250,250)"></td>
+							<td style="background-color: rgb(250,250,250)"></td>
+							<td style="background-color: rgb(250,250,250)"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="bottom">
+		<a style="color: rgb(234,80,80);font-weight: bold;"> · 2015년 6월 7일, 전체</a>
+		<a> 검색결과,</a>
+		<a style="font-weight: bold;"> 진행중인 사업</a>
+		<a> 은</a>
+		<a style="color: rgb(234,80,80);font-weight: bold;"> 총 614 건 </a>
+		<a> 입니다.</a>
+		<table id="table3" style="width: 600px;margin: 5px">
+		<tr style="background-color: rgb(247,247,247)">
+			<th>번호</th>
+			<th>지원사업명</th>
+			<th>주관부서</th>
+			<th>신청기간</th>
+			<th>조회</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2015년 창조경제 벤처창업대전 및 전시회 참가 신청 <input type="button" value="ON-LINE" style="height: 9px;background-color: white;border: 1px solid red;color: red; font-size: 7px;"></td>
+			<td>중소기업청</td>
+			<td>2015.06.04~2015.06.30</td>
+			<td>731</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>2015년 창조경제 벤처창업대전 및 전시회 참가 신청 
+			<input type="button" value="ON-LINE" style="height: 9px;background-color: white;border: 1px solid red;color: red; font-size: 7px;"></td>
+			<td>중소기업청</td>
+			<td>2015.06.04~2015.06.30</td>
+			<td>731</td>
+		</tr>
+		<tr>
+			<td>614</td>
+			<td>2015년 창조경제 벤처창업대전 및 전시회 참가 신청 <input type="button" value="ON-LINE" style="height: 9px;background-color: white;border: 1px solid red;color: red; font-size: 7px;"></td>
+			<td>중소기업청</td>
+			<td>2015.06.04~2015.06.30</td>
+			<td>731</td>
+		</tr>
+		<tr>
+			<td>614</td>
+			<td>2015년 창조경제 벤처창업대전 및 전시회 참가 신청 <input type="button" value="ON-LINE" style="height: 9px;background-color: white;border: 1px solid red;color: red; font-size: 7px;"></td>
+			<td>중소기업청</td>
+			<td>2015.06.04~2015.06.30</td>
+			<td>731</td>
+		</tr>
+		
+		</table>
+	</div>
+</body>
+</html>

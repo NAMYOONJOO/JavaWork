@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>주문 폼 작성</title>
+
+<style>
+table {
+	border: 0.5px solid black; /* 두께. 선종료, 선ㄴ색상 */;
+	border-collapse: collapse; /* border 간격 붙이기 */
+	padding: 20px;
+	margin: 10px;
+	background-color: rgb(252, 252, 252);
+	width: 1000px
+}
+
+td {
+	padding: 10px;
+}
+
+hr {
+	width: 100%
+}
+}
+</style>
+</head>
+
+<body>
+	<div>
+		<a class="title">주문자 정보입력</a>
+		<table>
+			<tr>
+				<td><a>주문자 정보</a></td>
+				<td><a>비회원으로 상품 구매시 본인인증을 하셔야 합니다.</a> <a><input
+						type="button" name="phone" value="핸드폰이증"></a> <a><input
+						type="button" name="Ipin" value="아이핀 인증"></a></td>
+			</tr>
+			<tr>
+				<td rowspan="3">주소</td>
+				<td><input type="text" name="address1" disabled="disabled">
+					<input type="button" name="find_address" value="주소찾기"></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="address2" disabled="disabled"
+					style="width: 400px"></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="address3" style="width: 400px"></td>
+			</tr>
+			<tr>
+				<td>휴대전화</td>
+				<td><select name="phone1">
+						<option value="010">010</option>
+						<option value="011">011</option>
+						<option value="017">017</option>
+						<option value="019">019</option>
+				</select> <a>-</a> <input type="number" name="phone2" style="width: 50px">
+					<a>-</a> <input type="number" name="phone2" style="width: 50px">
+					<input type="checkbox" name="sms">sms수신동의</td>
+			</tr>
+			<tr>
+				<td>이메일</td>
+				<td><input type="text" name="email1" style="width: 100px">
+					@ <input type="text" name="email2" style="width: 100px"> <select
+					name="email3">
+						<option value="">직접입력</option>
+						<option value="naver.com">naver.com</option>
+						<option value="gmail.com">gmail.com</option>
+						<option value="hanmail.net">hanmail.net</option>
+				</select></td>
+			</tr>
+		</table>
+		<br> <br>
+		<hr>
+	</div>
+	<br>
+	<br>
+
+
+
+	<div>
+		<a class="title">배송지 정보입력</a>
+		<table>
+			<tr
+				style="background-color: rgb(247, 247, 247); border-bottom: 1px solid rgb(230, 230, 230)">
+				<td>베송지 선택</td>
+				<td><input type="button" value="주문자정보와 동일" name="destination">
+				</td>
+			</tr>
+			<tr>
+				<td>받으시는 분</td>
+				<td><input type="text" name="addressee"></td>
+			</tr>
+			<tr>
+				<td rowspan="3">주소</td>
+				<td><input type="text" name="address1" disabled="disabled">
+					<input type="button" name="find_address" value="주소찾기">
+					<input type="checkbox" name="add"> 배송지목록에 추가</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="address2" disabled="disabled"
+					style="width: 400px"></td>
+			</tr>
+			<tr>
+				<td><input type="text" name="address3" style="width: 400px"></td>
+			</tr>
+			<tr>
+				<td>휴대전화</td>
+				<td><select name="phone1">
+						<option value="010">010</option>
+						<option value="011">011</option>
+						<option value="017">017</option>
+						<option value="019">019</option>
+				</select> <a>-</a> <input type="number" name="phone2" style="width: 50px">
+					<a>-</a> <input type="number" name="phone2" style="width: 50px">
+					<input type="checkbox" name="sms">sms수신동의</td>
+			</tr>
+			<tr>
+				<td>배송시 요구사항</td>
+				<td><input type="text" name="claim" style="width: 400px">
+				{0자/50자}
+				</td>
+			</tr>
+		</table>
+		<br> <br>
+		<hr>
+		<br> <br>
+	</div>
+	<div>
+		<a class="title">결재 정보입력</a>
+		<table>
+			<tr style="background-color: rgb(247, 247, 247)"">
+				<td>신용카드</td>
+				<td><input type="radio" name="cash" value="general" />
+					신용카드(일반)</td>
+				<td><input type="radio" name="cash" value="business" />
+					신용카드(법인)</td>
+				<td><input type="radio" name="cash" value="foreign" /> 해외발급카드</td>
+			</tr>
+			<tr
+				style="background-color: rgb(247, 247, 247); border-bottom: 1px solid rgb(230, 230, 230)">
+				<td>현금결제</td>
+				<td><input type="radio" name="cash" value="general" /> 무통장입금</td>
+				<td colspan="2"><input type="radio" name="cash"
+					value="business" /> 실시간 계좌이체</td>
+			</tr>
+			<tr>
+				<td>카드선택</td>
+				<td colspan="3"><select name="monthly" style="width: 200px">
+						<option value="현대">현대카드</option>
+						<option value="비씨">비씨카드</option>
+						<option value="삼성">삼성카드</option>
+						<option value="우리">우리카드</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>할부방식</td>
+				<td colspan="3"><select name="monthly" style="width: 200px">
+						<option value="2개월">일시불</option>
+						<option value="3개월">3개월</option>
+						<option value="4개월">4개월</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>결재안내</td>
+				<td colspan="3" style="align-content: flex-start;"><input
+					type="button" name="info1" value="간편결제안내"> <input
+					type="button" name="info1" value="공인인증안내"> <input
+					type="button" name="info1" value="안전결제안내"> <input
+					type="button" name="info1" value="안심클릭안내"> <input
+					type="button" name="info1" value="해외발급카드안내"></td>
+			</tr>
+
+		</table>
+		<br> <br>
+		<hr>
+	</div>
+</body>
+</html>
