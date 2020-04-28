@@ -21,6 +21,8 @@ td {
 hr {
 	width: 100%
 }
+a.title {
+font-weight: bold;
 }
 </style>
 </head>
@@ -30,7 +32,7 @@ hr {
 		<a class="title">주문자 정보입력</a>
 		<table>
 			<tr>
-				<td><a>주문자 정보</a></td>
+				<td ><a>주문자 정보</a></td>
 				<td><a>비회원으로 상품 구매시 본인인증을 하셔야 합니다.</a> <a><input
 						type="button" name="phone" value="핸드폰이증"></a> <a><input
 						type="button" name="Ipin" value="아이핀 인증"></a></td>
@@ -56,11 +58,11 @@ hr {
 						<option value="019">019</option>
 				</select> <a>-</a> <input type="number" name="phone2" style="width: 50px">
 					<a>-</a> <input type="number" name="phone2" style="width: 50px">
-					<input type="checkbox" name="sms">sms수신동의</td>
+					<input type="checkbox" name="sms" checked="checked">sms수신동의</td>
 			</tr>
 			<tr>
 				<td>이메일</td>
-				<td><input type="text" name="email1" style="width: 100px">
+				<td><input type="text" name="email1" style="width: 100px;margin-bottom: 10px">
 					@ <input type="text" name="email2" style="width: 100px"> <select
 					name="email3">
 						<option value="">직접입력</option>
@@ -70,8 +72,10 @@ hr {
 				</select></td>
 			</tr>
 		</table>
-		<br> <br>
-		<hr>
+		
+		<a style="padding-left: 10px;margin-top:10px;font-size: 12px">
+		* SK플래닛(주)는 통신판매중개자로서 통신판매의 당사자가 아니며, 개별판매자가 등록한 상품정보 및 거래에 대해 SK플래닛(주)는 일체의 책임을 지지 않습니다.</a>
+		 <br>
 	</div>
 	<br>
 	<br>
@@ -113,17 +117,21 @@ hr {
 						<option value="019">019</option>
 				</select> <a>-</a> <input type="number" name="phone2" style="width: 50px">
 					<a>-</a> <input type="number" name="phone2" style="width: 50px">
-					<input type="checkbox" name="sms">sms수신동의</td>
+					<input type="checkbox" name="sms"checked="checked">안심번호 사용(무료) 
+					<input type="button" value="?" style="width: 8px;height: 20px;background-color: white;border: 1px solid rgb(200,200,200);text-align: center;">
+					<input type="checkbox" name="sms">집전화 추가 입력</td>
 			</tr>
 			<tr>
 				<td>배송시 요구사항</td>
-				<td><input type="text" name="claim" style="width: 400px">
+				<td style="margin-bottom: 20px"><input type="text" name="claim" style="width: 400px">
 				{0자/50자}
+				<br>
+				<a style="margin-top:10px;color: blue;font-size: 12px;margin-bottom: 20px">
+		* 특정한 배송일을 지정하고자 할 경우 판매자와 연락하여 배송일을 확인해주시기 바랍니다.</a>
+		 <br>
 				</td>
 			</tr>
 		</table>
-		<br> <br>
-		<hr>
 		<br> <br>
 	</div>
 	<div>
@@ -164,7 +172,7 @@ hr {
 			<tr>
 				<td>결재안내</td>
 				<td colspan="3" style="align-content: flex-start;"><input
-					type="button" name="info1" value="간편결제안내"> <input
+					type="button" name="info1" value="간편결제안내" style="color: red;border: 1px solid red;padding: 4px"> <input
 					type="button" name="info1" value="공인인증안내"> <input
 					type="button" name="info1" value="안전결제안내"> <input
 					type="button" name="info1" value="안심클릭안내"> <input
