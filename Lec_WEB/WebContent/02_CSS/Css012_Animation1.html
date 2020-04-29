@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Animation</title>
+<!-- 
+	CSS 애니메이션 관련 참조
+	transition : https://www.w3schools.com/css/css3_transitions.asp
+	2D transform : https://www.w3schools.com/css/css3_2dtransforms.asp
+	3D transform : https://www.w3schools.com/css/css3_3dtransforms.asp
+	animations : https://www.w3schools.com/css/css3_animations.asp
+
+ -->
+<style> 
+div {
+    width: 100px;
+    height: 100px;
+}
+
+div#box1 {
+    background: red;
+	
+	transition:width 2s, height 1s, background-color 2s; /* width 값  변화 발생시 2초에 걸쳐 진행 */
+	
+}
+
+div#box1:hover {
+
+	width: 300px;
+	height: 200px;
+	background-color:white
+	
+}
+
+div#box2 {
+	background-color: blue;
+
+	transition : width 2s, height 2s, background-color 2s,transform 2s;
+}
+
+div#box2:hover{
+
+	width: 300px;
+	height: 200px;
+	background-color:violet;
+	transform: rotate(360deg);
+
+}
+/*  transform : 관련 값
+	translate()  <-- 위치 이동
+	rotate()  <-- 회전값
+	scale()  <-- 크기
+	skewX()  <-- x축 찌그러트리기
+	skewY()  <-- Y축 찌그러트리기
+	matrix()  <-- 좌표변환값.
+*/
+
+div#box3{
+	background-color: green;
+	transition: margin 2s;
+	/* TODO */
+}
+
+div#box3:hover{
+	margin: 100px;
+}
+
+</style>
+
+</head>
+<body>
+<h1>The transition Property</h1>
+
+<p>#box1 마우스를 올려보세요</p>
+<div id="box1"></div>
+
+<hr>
+
+<p>#box2 마우스를 올려보세요</p>
+<div id="box2"></div>
+
+<hr>
+
+<p>#box3 마우스를 올려보세요</p>
+<div id="box3"></div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
