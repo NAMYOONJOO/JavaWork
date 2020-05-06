@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD box-sizing</title>
+    <style>
+        .container {
+            width: 200px;
+            height: 150px;
+            background-color: yellow;
+        }
+        .box1{
+            background-color: crimson;
+            width: 100px;
+            height: 50px;
+            float: left;
+            border: 1px solid black;
+
+        }
+        
+        .box2{
+            background-color: rgb(27, 220, 20);
+            width: 100px;
+            height: 50px;
+            float: left;
+            border: 1px solid black;
+
+        }
+        .menu1{
+            width: 25%;
+            height: 50px;
+            border: 1px solid rebeccapurple;
+            float: left;
+        }
+        .menu2{
+            width: 75%;
+            height: 50px;
+            border: 1px solid rebeccapurple;
+            float: left;
+        }
+        /* width안에 border 포함시키기 */
+        *{
+            box-sizing: border-box;
+        }
+
+
+    </style>
+</head>
+<!--
+Responsive 반응형 앱
+
+-->
+
+<body>
+    <div class="container">
+        <div class="box1">100px</div>
+        <div class="box2">100px</div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="menu1">25%</div>
+        <div class="menu2">75%</div>
+    </div>
+</body>
+
+</html>
