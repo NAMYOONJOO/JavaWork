@@ -1,0 +1,150 @@
+<!-- Mobile first -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+    box-sizing: border-box;  /* RWD 필수 */
+    font-size: large;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+
+}
+    .col-m-0 {display: none;}
+    .col-m-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+    .col-m-2 {width: 16.66%; }  /* 2칸 짜리 폭 */
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+[class*="col-"]{
+	float: left;
+    padding: 15px;
+    border: 1px solid white;
+}
+.header1{
+    
+	background-color : #77a8bb;
+
+}
+.header2{
+	background-color :rgb(164, 23, 177);
+
+}
+.main1{
+	background-color :rgb(40, 205, 255);
+
+}
+.main2{
+	background-color :rgb(146, 28, 28);
+
+}
+.m1{
+	background-color :rgb(170, 80, 80);
+}
+.m2{
+	background-color :rgb(209, 112, 212);
+
+}
+.m3{
+	background-color :rgb(236, 230, 138);
+
+}
+.footer{
+	background-color :rgb(108, 173, 106);
+
+}
+.clear{
+	clear: both;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+@media screen and (min-width: 600px){
+    /*tablet*/
+    .header1{display: inline;}
+    .col-t-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+    .col-t-2 {width: 16.66%; }  /* 2칸 짜리 폭 */
+    .col-t-3 {width: 25%;}
+    .col-t-4 {width: 33.33%;}
+    .col-t-5 {width: 41.66%;}
+    .col-t-6 {width: 50%;}
+    .col-t-7 {width: 58.33%;}
+    .col-t-8 {width: 66.66%;}
+    .col-t-9 {width: 75%;}
+    .col-t-10 {width: 83.33%;}
+    .col-t-11 {width: 91.66%;}
+    .col-t-12 {width: 100%;}
+    .header1 ,.header2{
+        height: 105px;
+    }
+    .main1, .main2{height: 210px;}
+    
+    li{
+        height: 105px;
+    }
+    .footer{height: 105px;}
+}
+
+@media screen and (min-width: 768px){
+    .col-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+    .col-2 {width: 16.66%; }  /* 2칸 짜리 폭 */
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    .main1{height: 210px;}
+    li{height: 70px;
+    margin: 0px;}
+    
+}
+</style>
+<body>
+
+    <div class="header1 col-m-0 col-t-2 col-4">
+        <h1>A</h1>
+    </div>
+    <div class="header2 col-m-12 col-t-10 col-8">
+        <h2>B</h2>
+    </div>
+    <div class="clear"></div>
+    <div class="main1 col-m-12 col-t-2 col-2">
+        <p>C</p>
+    </div>
+    <div class="main2 col-m-12 col-t-8 col-6">
+        <p>D</p>
+    </div>
+    <div class="menu">
+        <ul>
+            <li class="m1 col-m-4 col-t-2 col-4">E</li>
+            <li class="m2 col-m-4 col-t-2 col-4">F</li>
+            <li class="m3 col-m-4 col-t-3 col-4">G</li>
+        </ul>
+    </div>
+
+    <div class="footer col-m-12 col-t-9 col-12">
+        <p>H</p>
+    </div>
+</body>
+
+</html>
