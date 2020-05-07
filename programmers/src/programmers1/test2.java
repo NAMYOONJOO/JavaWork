@@ -20,6 +20,7 @@ public class test2 {
                if(prices[i]<=prices[j]){
                    sec=sec+1;
                }else{
+            	   if(sec==0)sec++;
                    break;
                }
             }
