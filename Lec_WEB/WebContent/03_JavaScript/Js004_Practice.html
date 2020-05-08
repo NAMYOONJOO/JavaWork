@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>테이블 생성 연습</title>
+<!-- 
+랜덤으로 생성된 row (행) 과 col(열)  값에 따라 <table> 을 생성해보세요
+document.write() 사용   +  for 문등 제어문 사용 
+페이지 새로고침 할때마다 row, col 이 random 으로 생성
+row 와 col 은 각각 1 ~ 10 사이 랜덤 정수값
+ -->
+<style>
+table, td, th{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+table{
+	width: 100%;
+}
+</style>
+</head>
+<body>
+<script>
+
+var n = Math.floor(Math.random()*10)+1;
+document.write("n: "+n+"<br>")
+document.write("<ol>\n")
+
+document.write("<ol>\n")
+
+for(i = 0;i<n;i++){
+	document.write("<li>안녕하세요"+(i+1)+"번째입니다")
+}
+
+var row = Math.floor(Math.random()*10)+1;
+var col = Math.floor(Math.random()*10)+1;
+
+document.write("<br>")
+
+document.write("row: "+row+"<br>")
+document.write("col: "+col+"<br>")
+document.write("<table style = 'background-color: deeppink;'>")
+for(x = 1;x<=row;x++){
+	document.write("<tr>")
+	for(y = 1;y<=col;y++ ){
+		document.write("<td >"+x+"행"+y+"열 </td>")
+	}
+	document.write("</tr>")
+}
+document.write("</table>")
+</script>
+
+</body>
+</html>

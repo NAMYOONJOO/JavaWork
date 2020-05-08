@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript 연습</title>
+
+    <style>
+        p {
+            border:solid 1px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <script>
+
+        function chkkkk(){
+            //name = id 인 element(들)을 리턴
+            var frm = document.forms['frm']
+            var e = document.getElementsByName('chkk');
+            e =  document.querySelectorAll("input[type = 'checkbox']") // 이름없이 하는 방법 
+            
+            var cnt = 0;
+            for(i = 0;i<e.length;i++){
+                if(e[i].checked){
+                   cnt++;
+                }
+            }
+            if(cnt==3){
+                frm.submit();
+            }
+            else{
+                
+                alert("모든약관에 동의해주세요")
+                return false
+            }
+        }
+        
+        </script>
+    <h3>회원가입 동의 약관</h3>
+    <h3>아래 체크박스를 다 클릭했을때만 제출이 되도록 하고</h3>
+    <h3>하나라도 체크 안되면 체크 안되었다는 팝업을 띄웁니다.</h3>
+    <form name="frm" action="https://www.w3schools.com/action_page.php">
+        <p>약관내용1 <br /> 어쩌구 저쩌구</p>
+        <input type="checkbox" name = "chkk"/>  약관에 동의하셔야 합니다 (필수)
+        <p>약관내용2 <br /> 주저리 주저리</p>
+        <input type="checkbox" name = "chkk"/>  약관에 동의하셔야 합니다 (필수)
+        <p>약관내용3<br /> 왈가 왈부</p>
+        <input type="checkbox" name = "chkk"/>  약관에 동의하셔야 합니다 (필수)
+        <br />
+        <input type="button" value="제출" onclick="chkkkk()">
+    </form>
+    <h3 id="result"></h3>
+
+
+</body>
+
+
+</html>
+

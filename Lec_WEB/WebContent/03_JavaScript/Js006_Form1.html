@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Form 데이터</title>
+<style>
+div#btnBox {
+	position: fixed;
+	right: 0px; top: 0px;
+	margin: 4px;
+	border: 1px solid orange;
+	width: 180px;
+	
+}
+div#btnBox * { margin: 2px; }
+</style>
+</head>
+<!-- 
+	JavaScript 로 
+	다양한 form element 들의 '값을 가져 올수도' 있어야 한며,
+	반대로 '값을 입력해야 할수도' 있다.
+	
+	JavaScript 는 form element 들을 접근할수 있는
+	다양한 방법들을 제공한다.  (특히 name 값 활용!)
+ -->
+ 
+<!-- 
+	※ 각 form element별 동작하는 것으로 JS 와 HTML 코드 작성하면서 확인 하기 
+ -->
+
+<script>
+
+function showData(){
+  var result = "입력결과 <br>";
+  //form 객체 가져오기 (name 사용)
+ // var frm = document.forms["myform1"];
+  var frm = document.forms.myform1;
+
+  //1. 일반적인 input값 .value 값
+  var username = frm["username"].value;
+
+  //아래와 같이 해도 동일하게 동작
+  // username = document.forms["myform1"]["username"].value;
+  // username = document.forms.myform1.username.value;
+  // username = document["forms"]["myform1"]["username"].value
+  result+="이름: "+username+"<br>"
+
+  // 2. checkbox 의 값.  .checked로 판단
+
+  var hobby = "";
+  
+  if(frm["drive"].checked){
+    hobby +=frm["drive"].value+", "
+  }
+  if(frm["music"].checked){
+    hobby +=frm["music"].value+", "
+  }
+  if(frm["sports"].checked){
+    hobby +=frm["sports"].value+", "
+  }
+  
+  result+="취미 : "+hobby+"<br>";
+
+  //3. checkbox 동일 name이 여럿인 경우 
+  //frm["skill"] <==skill이라는 name을 갖고 있는 element들의 배열(?)dla
+  var skill = "";
+
+  for(i = 0; i<frm["skill"].length;i++){
+    if(frm["skill"][i].checked){
+    skill +=frm["skill"][i].value+", "
+  }
+  }
+
+  result+="스킬 : "+skill+"<br>";
+
+  //4. radio : 동일 name 구성,   위 3번과 유사
+
+  var gender = "";
+
+  for(i=0 ; i < frm["gender"].length ;i++){
+    if(frm["gender"][i].checked){
+    gender +=frm["gender"][i].value
+  break;  
+  }
+
+  }
+
+
+  result +="성별 : "+gender+"<br>"
+
+
+  // 5. <select> : 단일 .value 사용
+  result += "좋아하는 차1 : "+ frm["cars"].value+"<br>";
+  
+
+  // 6. <select> : multipel 3과 유사 .selected 사용
+  var car = "";
+  for(i = 0;i<frm["cars2"].length;i++){
+    if(frm["cars2"][i].selected){
+      car+=frm["cars2"][i].value+", ";
+    }
+
+  }
+  result +="좋아하는차 2 :"+car
+
+
+  //7. <textarea> : .value 혹은  innerHTML 로 값을 가져올 수 있다. 
+  //.value : '현재' 사용자가 입력한 값
+  //.innerHTML : 'HTML'content 값
+    //result+="메모 : "+frm["message"].innerHTML+"<br>"
+  result+="메모 : "+frm["message"].value+"<br>"
+
+  
+  document.getElementById("result").innerHTML = result;
+}
+function setData(){
+
+  var frm = document.forms["myform1"];
+
+  //input
+  frm["username"].value = "홍길동"
+
+  //checkbox
+  frm["drive"].checked = false;
+  frm["music"].checked = true;
+  frm["sports"].checked = true;
+
+  //checkbox (동일 name)
+  frm["skill"][0].checked = false;
+  frm["skill"][1].checked = true;
+  frm["skill"][2].checked = false;
+
+  // radio button
+  frm["gender"][0].checked = true
+  //frm["gender"].value = 'male'//xx
+
+  //select (단일)
+  //방법 1 frm["cars"].value = 'flat'; //해당 value 값으로 바꾸면 된다. 
+  //방법 2
+  frm["cars"][2].selected = true;
+
+  //select(multiple)
+  frm["cars2"][0].selected = true;
+  frm["cars2"][1].selected = true;
+  frm["cars2"][2].selected = true;
+  frm["cars2"][3].selected = true;
+
+  //textarea
+  frm["message"].value = "김우경바보 언능 커피사러가자"
+  frm["message"].innerHTML = "김우경바보 언능 커피사러가자"
+}
+
+</script>
+
+<body>
+<div id="btnBox">
+<button type="button" onclick="showData();">입력값 보여주기</button>
+<br> 
+<button type="button" onclick="setData();">입력값 세팅</button>
+<br>
+<p id="result"></p>
+</div>
+
+<form name="myform1">
+이름:<br>
+<input type="text" name="username"><br>
+<br>
+
+취미:<br>
+<input type="checkbox" name="drive" value="driving">드라이빙<br>
+<input type="checkbox" name="music" value="music">음악<br>
+<input type="checkbox" name="sports" value="sports">운동<br>
+<br>
+
+보유기술:<br>
+<input type="checkbox" name="skill" value="자바">JAVA<br>
+<input type="checkbox" name="skill" value="닷넷">.Net<br>
+<input type="checkbox" name="skill" value="애플">iOS<br>
+<br>
+
+
+성별:<br>
+<input type="radio" name="gender" value="male">남<br>
+<input type="radio" name="gender" value="female">여<br>
+<input type="radio" name="gender" value="animal">케모노<br>
+<br>
+
+좋아하는 차1:<br>
+  <select name="cars">
+    <option value="volvo">볼보</option>
+    <option value="saab">사브</option>
+    <option value="fiat" >피아트</option>
+    <option value="audi" selected>아우디</option>
+  </select> 
+<br><br>
+
+좋아하는 차2:<br>
+  <select name="cars2" size="4" multiple>
+    <option value="volvo">볼보</option>
+    <option value="saab" selected>사브</option>
+    <option value="fiat" >피아트</option>
+    <option value="audi" selected>아우디</option>
+  </select> 
+<br><br>
+
+
+메모:<br>
+<textarea name="message" style="width:200px; height:100px">The cat was playing in the garden.</textarea>
+<br>
+
+<!-- <input type="submit" value="제출">  -->
+
+</form>
+
+<!-- 
+<form name="myform2">
+별명:<br>
+<input type="text" name="nickname">
+
+<br><br>
+<input type="submit" value="제출">
+
+</form>
+ -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

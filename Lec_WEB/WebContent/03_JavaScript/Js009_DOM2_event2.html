@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>DOM bubble/capture</title>
+</head>
+<style>
+ul, li {padding: 5px;margin: 3px;}
+ul{background-color: pink;}
+li{background-color: cyan;}
+</style>
+<!-- 
+element.addEventListener("이벤트", 함수, useCapture)
+
+https://javascript.info/bubbling-and-capturing
+
+
+window.event 객세 사용
+	event.stopPropagation();
+
+
+-->
+<body>
+<ul>
+  <li onclick="/*TODO*/">Coffee</li>
+  <li onclick="/*TODO*/">Tea
+    <ul>
+      <li onclick="/*TODO*/">Black tea</li>
+      <li onclick="/*TODO*/">Green tea</li>
+    </ul>
+  </li>
+  <li>Milk</li>
+</ul>
+
+<script>
+
+// TODO
+
+</script>
+
+<br>
+<ul id="ad">
+  <li>커피</li>
+  <li>차
+    <ul>
+      <li>홍차</li>
+      <li>녹차</li>
+    </ul>
+  </li>
+  <li>우유</li>
+</ul>
+
+<script>
+
+// TODO
+
+</script>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

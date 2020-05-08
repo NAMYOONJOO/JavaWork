@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>AJAX API서울시 지하철역사정보</title>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+</head>
+<!--
+■서울시 지하철 역사 정보
+http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-12753&srvType=A&serviceKind=1&currentPageNo=1
+
+샘플url
+
+XML 버젼
+http://swopenAPI.seoul.go.kr/api/subway/키값넣으세요/xml/stationInfo/0/5/서울
+예] http://swopenAPI.seoul.go.kr/api/subway/4d46796d7366726f3833774a774955/xml/stationInfo/0/5/서울
+
+JSON 버젼
+http://swopenAPI.seoul.go.kr/api/subway/키값넣으세요/json/stationInfo/0/5/서울
+예] http://swopenAPI.seoul.go.kr/api/subway/4d46796d7366726f3833774a774955/json/stationInfo/0/5/서울 
+
+ -->
+<body>
+<h1>서울시 지하철 역사 정보</h1>
+<form>
+역명: <input type="text" id="stationname" value="서울"/><br><br>
+
+<button type="button" onclick="loadData()">역사정보 가져오기</button>
+<button type="button" onclick="removeTable()">지우기</button>
+</form>
+<br><br>
+<h2>AJAX + XML</h2>
+<table id="demoXML"></table>
+<hr>
+<h2>AJAX + JSON</h2>
+<table id="demoJSON"></table>
+
+
+<script>
+var api_key = "당신의 키값을 입력하세요";
+
+function removeTable(){
+	document.getElementById('demoXML').removeChild(document.getElementById('demoXML').childNodes[0]);
+	document.getElementById('demoJSON').removeChild(document.getElementById('demoJSON').childNodes[0]);
+}
+
+function loadData() {
+
+	// TODO
+
+}
+
+function parseXML(xmlDOM) {
+
+	// TODO
+	
+}
+
+function parseJSON(jsonText){
+
+	// TODO
+
+}
+</script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

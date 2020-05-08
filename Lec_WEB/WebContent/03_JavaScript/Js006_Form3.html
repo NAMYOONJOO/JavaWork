@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Form 검증2</title>
+<!-- 여러개의 체크 박스의 경우, 그중에 몇개이상 체크해야 하는 경우라면? -->
+<style>
+table, th, td { border: 1px solid black; border-collapse: collapse;}
+th, td {padding: 5px;}
+</style>
+</head>
+<body>
+<form name="frm" action="https://www.w3schools.com/action_page.php">
+<table>
+	<tr>
+		<th>check</th>
+		<th>id</th>
+		<th>이름</th>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="id" value="43"></td>
+		<td>43</td>
+		<td>최승섭</td>		
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="id" value="27"></td>
+		<td>27</td>
+		<td>강성후</td>		
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="id" value="8"></td>
+		<td>8</td>
+		<td>하혜선</td>		
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="id" value="11"></td>
+		<td>11</td>
+		<td>이재민</td>		
+	</tr>
+</table>
+<br>
+
+<!--  TODO : onclick -->
+<!-- 주의 : button 을 form 안에 사용시 type 명시 안하면
+	자동적으로 submit 버튼으로 동작함 -->
+	
+	<button type="button" onclick="chkDelete()">삭제하기</button><br>
+</form>
+
+<script>
+
+function chkDelete(){
+	//name = id 인 element(들)을 리턴
+	var frm = document.forms['frm']
+
+	var e = document.getElementsByName('id');
+	var cnt = 0;
+	for(i = 0;i<e.length;i++){
+		if(e[i].checked){
+			cnt=1;break;
+		}
+	}
+
+
+	if(cnt==0){
+		alert("삭제할 목록을 체크하세요")
+	}
+	else{
+		frm.submit();
+	}
+}
+
+</script>
+
+</body>
+</html>

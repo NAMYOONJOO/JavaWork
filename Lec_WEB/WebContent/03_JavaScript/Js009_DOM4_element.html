@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>DOM - Node</title>
+<style>
+div { padding: 3px; }
+p { background-color: cyan;}
+table, th, td{
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+}
+td{
+	background-color: orange;
+}
+
+span, input{
+	display:inline-block; 
+	width:200px;
+}
+
+</style>
+</head>
+<!-- 
+
+	node 를 생성할수 있다.!
+	생성된 노드를 원하는 node 에 붙일수 있다.!
+	
+	document.createElement()
+	document.createTextNode()
+	
+	E.appendChild(A) : 
+		A를 E의 마지막 child 로 append 된다.
+	E.insertBefore(B, A) : 
+		E 의 child 중에  B 앞에 A를 child 로 insert 한다.
+	E.removeChild(A) :
+		E 의 child 중에 A 를 제거한다.
+ -->
+ 
+ <!-- 
+ 	attribute 를 세팅할수도 있다
+ 	E.setAttribute("attribute 이름", "attribute 값");
+ 	
+ 	attribute 를 제거
+ 	E.removeAttribute("attribute 이름");
+ 	
+ 	attribute 값 리턴
+ 	E.getAttribute("attribute 이름");  
+ 	
+ 	attribute 를 갖고 있는지 여부, true/false 리턴
+ 	E.hasAttribute("attribute 이름");   
+  -->
+
+<body>
+
+<div id="div1" style="background-color: yellow">
+	div1입니다
+	<p id="p1">p1 입니다</p>
+	<p id="p2">p2 입니다</p>
+</div>
+
+<script>
+var para;
+var node;
+var parent, child;
+var element = document.getElementById("div1");
+
+// 단계별로 확인해보자
+
+// appendChild()
+// TODO
+
+// insertBefore()
+// TODO
+
+// removeChild()
+// TODO
+
+</script>
+
+
+<div>
+<table id="table1">
+<tr>
+	<th>이름</th>
+	<th>아이디</th>
+</tr>
+<tr>
+	<td><!-- this 는 그 element다 -->
+	<span onclick="TODO">
+	홍길동
+	</span>
+	</td>
+	<td>
+	<span onclick="TODO">
+	Mr.Hong
+	</span>
+	</td>
+</tr>
+</table>
+</div>
+
+<script>
+
+// TODO
+
+</script>
+
+<script>
+
+// TODO
+
+</script>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

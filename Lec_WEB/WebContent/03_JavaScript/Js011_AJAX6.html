@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>AJAX API자치구단위 서울 생활인구 일별 집계표</title>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+</head>
+<!--
+■자치구단위 서울 생활인구 일별 집계표
+http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-15379&srvType=S&serviceKind=1&currentPageNo=1
+
+http://openapi.seoul.go.kr:8088/(인증키)/(요청파일타입)/SPOP_DAILYSUM_JACHI/(요청시작INDEX)/(요청종료INDEX)/(기준일ID)/(시군구코드)
+
+샘플url
+
+XML 버젼
+http://openapi.seoul.go.kr:8088/(인증키)/xml/SPOP_DAILYSUM_JACHI/1/5/
+예] http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/xml/SPOP_DAILYSUM_JACHI/1/5/
+예] http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/xml/SPOP_DAILYSUM_JACHI/1/5/20190101
+예] http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/xml/SPOP_DAILYSUM_JACHI/1/5/20190101/11000
+
+JSON 버젼
+http://openapi.seoul.go.kr:8088/(인증키)/json/SPOP_DAILYSUM_JACHI/1/5/
+예] http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/json/SPOP_DAILYSUM_JACHI/1/5/
+예] http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/json/SPOP_DAILYSUM_JACHI/1/5/20190101
+예] http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/json/SPOP_DAILYSUM_JACHI/1/5/20190101/11000
+
+
+※ 한번에 1000개 까지의 데이터만 볼수 있슴
+
+ -->
+<body>
+<h1>자치구단위 서울 생활인구 일별 집계표</h1>
+<form>
+날짜: <input type="date" id="stdr_de_id" value="2019-01-01" placeholder="yyyy-mm-dd"/><br>
+시작index <input type="number" id="start_index" value="1"/><br>
+끝index <input type="number" id="end_index" value="5"/><br><br>
+
+<button type="button" onclick="loadData()">정보 가져오기</button>
+<button type="button" onclick="removeTable()">지우기</button>
+</form>
+<br><br>
+<h2>AJAX + XML</h2>
+<table id="demoXML"></table>
+<hr>
+<h2>AJAX + JSON</h2>
+<table id="demoJSON"></table>
+
+
+<script>
+var api_key = "자신의 키값 입력";  // 자신의 키값 입력하기!
+
+function removeTable(){
+	document.getElementById('demoXML').removeChild(document.getElementById('demoXML').childNodes[0]);
+	document.getElementById('demoJSON').removeChild(document.getElementById('demoJSON').childNodes[0]);
+}
+
+function loadData() {
+
+	// TODO
+	
+}
+
+function parseXML(xmlDOM) {
+
+	// TODO
+
+}
+
+function parseJSON(jsonText){
+
+	// TODO
+
+}
+</script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

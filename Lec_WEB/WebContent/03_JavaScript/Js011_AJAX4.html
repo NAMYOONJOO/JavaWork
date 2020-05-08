@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>AJAX API서울시 지하철호선별 역별 승하차 인원 정보</title>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+</head>
+<!-- 
+■서울시 지하철호선별 역별 승하차 인원 정보 
+http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-12914&srvType=A&serviceKind=1&currentPageNo=1
+
+샘플url
+
+XML 버젼
+http://openapi.seoul.go.kr:8088/키값을넣으세요/xml/CardSubwayStatsNew/1/5/20181001
+예) http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/xml/CardSubwayStatsNew/1/5/20181001  
+
+JSON 버젼
+http://openapi.seoul.go.kr:8088/키값을넣으세요/json/CardSubwayStatsNew/1/5/20181001
+예) http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/json/CardSubwayStatsNew/1/5/20181001 
+ -->
+<body>
+<h1>서울시 지하철 승하차 인원 정보</h1>
+<form>
+날짜 (yyyyMMdd): <input type="text" name="date" id="date" value="20181001"/><br><br>
+
+<button type="button" onclick="loadData()">승하차정보 가져오기</button>
+<button type="button" onclick="removeTable()">지우기</button>
+</form>
+<br><br>
+<h2>AJAX + XML</h2>
+<table id="demoXML"></table>
+<hr>
+<h2>AJAX + JSON</h2>
+<table id="demoJSON"></table>
+
+
+<script>
+var api_key = "당신의 키값을 입력하세요";
+
+function removeTable(){
+
+	// TODO
+
+}
+
+function loadData() {
+
+	// TODO
+
+} // end loadData()
+
+function parseXML(xmlDOM) {
+
+	// TODO
+	
+}
+
+function parseJSON(jsonObj){
+
+	// TODO
+	
+}
+</script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
