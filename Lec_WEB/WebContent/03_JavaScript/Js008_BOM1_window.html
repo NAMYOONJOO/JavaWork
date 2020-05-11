@@ -28,7 +28,7 @@ window
 	├─ history
 	└─ navigator
 	
-■ widow 객체
+■ window 객체
 
 	BOM 의 최상위 객체.
 	모든 '전역(global)' 객체, 변수, 함수는 자동적으로 window 객체 멤버가 된다.
@@ -44,9 +44,27 @@ window
 -->
 
 <script>
+//전역변수 x, windows 소속
+var x = 10; 
+function myFunc1(){
+	// document.getElementById('result1').innerHTML = '전역 x = '+x;
+	window.document.getElementById('result1').innerHTML = '전역 x = '+window.x//+"a= "+a; =>동작하지 않는다. (에러)
+}
+function myFunc2(){
+	x = x+3
+	document.getElementById('result2').innerHTML = x
+}
+function myFunc3(){
+	a = 40; //함수안에서 선언했다고 다 지역변수 아니다. var 사용하지 않으면 자동으로 전역변수이다. 
+	document.getElementById('result3').innerHTML = a;
 
-// TODO
-
+}
+function myFunc4(){
+	 a=a+20
+	 document.getElementById('result4').innerHTML = a;
+	
+}
+//함수안에서 지역변수로 사용할 거라면 꼭 var사용하기 
 </script>
 
 <body>
@@ -66,6 +84,14 @@ window
 //alert(), confirm(), prompt() 도 window 소속
 
 // TODO
+function myFunc5(){
+	var answer = window.confirm('confirm() 도 window 소속')
+	document.getElementById('result5').innerHTML = answer
+}
+function myFunc6(){
+	var name = window.prompt('너의 이름은?')
+	document.getElementById('result6').innerHTML = name;
+}
 
 </script>
 <input type="button" onclick="window.alert('alert함수도 window 소속')" value='alert() 함수'/><br><br>
@@ -86,12 +112,13 @@ function myFunc7(){
 	// open(url, 새창이름, 새창옵션);
 	// 리턴값도 window 객체
 	// TODO
+	myWindow = open("Js008_BOM1_pop.html",'팝업창','width = 350,height = 500,left = 500. top =800')
 	
 }
 </script>
 <button type="button" onclick="myFunc7()">open()</button>
 <br><br>
-<button type="button" onclick="TODO">close()</button> <!-- 열린 창 닫기 -->
+<button type="button" onclick="myWindow.close()">close()</button> <!-- 열린 창 닫기 -->
 <br><br>
 <hr>
 

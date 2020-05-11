@@ -48,7 +48,8 @@ HTML element를 다루기 위한
 
 <script>
 //TODO : id 값이 중복되는 경우 첫번째 element 만 가져온다.
-
+document.write('결과='+document.getElementById('demo1').innerHTML)
+document.getElementById('demo3').innerHTML = '바뀌었숨나덩'
 </script>
 
 <hr>
@@ -61,6 +62,10 @@ HTML element를 다루기 위한
 <script>
 // div element들을 찾아서 차례대로 "div1 입니다" "div2 입니다"..  로 내용 바꾸기
 // TODO
+ var elements = document.getElementsByTagName("div");
+ for(i = 0;i<elements.length;i++){
+	 elements[i].innerHTML = 'div '+ i+' 입니다';
+ }
 
 </script>
 
@@ -79,6 +84,10 @@ HTML element를 다루기 위한
 // element.style.background
 
 // TODO
+var elements = document.getElementsByClassName('c3')
+for(i = 0;i<elements.length;i++){
+	elements[i].style.backgroundColor = 'yellow'
+}
 
 </script>
 
@@ -86,7 +95,7 @@ HTML element를 다루기 위한
 <!-- getElementsByName(name) : 'name' 의 'form element들' 을 배열로 리턴 -->
 <h2>getElementsByName(name)</h2>
 <form>
-name1: <input type="text" value="name1" name="name1"/><br>
+name1: <input type="text" value="name1" name="name1" disabled/><br>
 name1: <input type="text" value="name1" name="name1"/><br>
 name2: <input type="text" value="name2" name="name2"/><br>
 </form>
@@ -94,8 +103,15 @@ name2: <input type="text" value="name2" name="name2"/><br>
 <script>
 // name=name1 인 element들을 찾아서
 // 배경색을 노란색으로 하고 입력사이즈를 50으로 변경해보기
-
 // TODO
+var elements = document.getElementsByName('name1')
+for(i = 0;i<elements.length;i++){
+	elements[i].style.backgroundColor = 'yellow'
+	elements[i].size = '50'
+	elements[i].disabled = true //value가 없는 attribute의 경우 
+	elements[i].value = "getElementsByname"
+}
+
 
 </script>
 
@@ -110,6 +126,10 @@ name2: <input type="text" value="name2" name="name2"/><br>
 // p.intro selector 에 해당하는 element 들을 찾아서 배경색 하늘색으로
 
 // TODO
+var elements = document.querySelectorAll('p.intro')
+for(i = 0;i<elements.length;i++){
+	elements[i].style.backgroundColor = 'skyblue'
+}
 
 </script>
 
@@ -145,9 +165,9 @@ document.title
 </form>
 <form name="frm3">
 	<input value="폼 3_1" name="input3_1"/>
-	<input value="폼3_2" name="input3_2"/>
-	<input value="폼3_3" name="input3_3"/>
-	<input value="폼3_4" name="input3_4"/>
+	<input value="폼 3_2" name="input3_2"/>
+	<input value="폼 3_3" name="input3_3"/>
+	<input value="폼 3_4" name="input3_4"/>
 </form>
 <p id="frm_result1"></p>
 <p id="frm_result2"></p>
@@ -155,7 +175,18 @@ document.title
 <script>
 // form 들을 다 뒤져서 form element 들의 value 들을 
 
-// TODO
+var frm1 = document.forms['frm3'];
+
+var result = "";
+for(i = 0;i<frm1.length;i++){//여기서 form.length 는 그 안의 form element 들의 개수 
+	result += frm1.elements[i].value+""; //form 요소의 elements배열
+}
+
+document.getElementById('frm_result1').innerHTML = result;
+document.getElementById('frm_result2').innerHTML = 
+	//document.forms['frm2']['input2_2'].value
+	document.forms.frm2.input2_2.value //위에줄과 같은 표현
+	;
 
 </script>
 
@@ -170,6 +201,11 @@ document.title
 <script>
 
 // TODO
+
+var elements = document.images;
+for(  i = 0;i<elements.length;i++){
+elements[i].style.border = "4px solid purple"
+}
 
 </script>
 

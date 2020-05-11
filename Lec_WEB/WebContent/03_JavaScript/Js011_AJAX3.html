@@ -45,12 +45,29 @@ JSON.parse() 를 사용하면 JavaScript object 로 손쉽게 변환된다
 function loadPet(){	
 
 	// TODO
-	
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function(){
+		if(this.readyState ==4&&this.status==200){
+			var myObj = JSON.parse(this.responseText)
+			document.getElementById('name').innerHTML = myObj.name;
+			document.getElementById('age').innerHTML = myObj.age;
+			result = ""
+			for(i = 0; i<myObj.pets.length;i++){
+				result += myObj.pets[i].animal +" : " +myObj.pets[i].name+"<br>"
+			}
+			document.getElementById('pets').innerHTML = result
+
+		}
+	}
+	xhttp.open("GET",json_1,true)
+	xhttp.send();
 }
 
 function clearTable(){
 
-	// TODO
+	document.getElementById("name").innerHTML = "";
+	document.getElementById("age").innerHTML = "";
+	document.getElementById("pets").innerHTML = "";
 	
 }
 

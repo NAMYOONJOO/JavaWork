@@ -42,11 +42,16 @@ function showScreen(){
 	"window.innerWidth x innerHeight: " + window.innerWidth + " x " + window.innerHeight + "<br>" + 
 	"window.outerWidth x outerHeight: " + window.outerWidth + " x " + window.outerHeight + "<br>"
 	;
+	//inner, outer 값은 window창 조절시 값이 바뀐다. 
 }
 
 
 
 </script>
+<!-- 
+	oncload : 해당 element의 로딩이 끝나면 호출
+	onresize : element 사이즈 변결될 때마다 호출
+ -->
 
 <body onresize="showScreen()" onload="showScreen()">
 <p id="demo"></p>

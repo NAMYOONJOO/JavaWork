@@ -40,13 +40,52 @@ DOM event 객체
 <div id="demo">이벤트 없어요</div><br>
 <button id="add_event">이벤트 추가</button>
 <button id="remove_event">이벤트 삭제</button>
-
+<p id = 'event'></p>
 <script>
 var demoBox = document.getElementById("demo");
 var addButton = document.getElementById("add_event"); 
 var removeButton = document.getElementById("remove_event");
 
 // TODO
+function clickhandler(event){
+	document.getElementById('event').innerHTML=event.type+"   "+event.target;
+	var bgcolor = demoBox.style.background;
+	if(bgcolor!='greenyellow'){
+		demoBox.style.background='greenyellow'
+	}else{
+		demoBox.style.background='yellow'
+		
+	}
+}
+function mouseOverHandler(event){
+	document.getElementById('event'),innerHTML = event.type+"   "+event.target;
+	demoBox.style.outline = "3px solid red"
+}
+
+
+addButton.addEventListener("click",function(){
+	demoBox.addEventListener("click",clickhandler); //이벤트 등록
+	demoBox.innerHTML = ("클릭해보세요")
+
+	//onXXX() attribute 사용하여 이벤트 등록
+	demoBox.onmouseover = mouseOverHandler;
+	demoBox.onmouseout = function(event){
+		demoBox.style.outline = "none"
+
+	}
+});
+
+//이벤트 삭제
+removeButton.addEventListener("click",function(){
+	demoBox.removeEventListener("click",clickhandler) //이벤트 삭제 해제 
+	demoBox.innerHTML = ("이벤트 없어요")
+
+	//onXXX() attribute 사용하여 이벤트 해제
+	demoBox.onmouseover = undefined; //이벤트 삭제
+	demoBox.onmouseout = undefined; 
+
+})
+
 
 </script>
 
@@ -56,6 +95,17 @@ var removeButton = document.getElementById("remove_event");
 <script>
 
 // TODO
+// window.addEventListener("resize",function(){
+// 	document.getElementById('windowSize').innerHTML = 
+// 		window.innerWidth +" x "+ window.innerHeight
+// })
+
+// 페이지 '전체' 로딩 완료
+window.onresize = 
+window.addEventListener("resize",function(){
+	document.getElementById('windowSize').innerHTML = 
+		window.innerWidth +" x "+ window.innerHeight
+})
 
 </script>
 

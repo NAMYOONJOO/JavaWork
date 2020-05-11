@@ -45,7 +45,7 @@ http://swopenAPI.seoul.go.kr/api/subway/키값넣으세요/json/stationInfo/0/5/
 
 
 <script>
-var api_key = "당신의 키값을 입력하세요";
+var api_key = "6561536751626864373042464d4356";
 
 function removeTable(){
 	document.getElementById('demoXML').removeChild(document.getElementById('demoXML').childNodes[0]);
@@ -55,18 +55,61 @@ function removeTable(){
 function loadData() {
 
 	// TODO
-
+	var station = document.getElementById('stationname').value.trim();
+	//XML
+	var url = "http://swopenAPI.seoul.go.kr/api/subway/"+api_key+"/xml/stationInfo/0/5/"+station
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200){
+			parseXML(this.responseXML);
+		}
+	};
+	xhttp.open("GET", url, true);
+	xhttp.send();
+	JSON
+	var url = "http://swopenAPI.seoul.go.kr/api/subway/"+api_key+"/json/stationInfo/0/5/"+station
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function(){
+		if(this.readyState==4&&this.status==200){
+			var jsonObj = JSON.parse(this.responseText)
+			parseJSON(jsonObj);
+		}
+	}
+	xhttp.open("GET",url,true); 
+	xhttp.send()
 }
 
 function parseXML(xmlDOM) {
 
 	// TODO
+	var table = "<tr><th>역명</th><th>아이디</th><th>호선</th><th>영문명</th></tr>"
+	var row = xmlDOM.getElementsByTagName("row");
+	for(i = 0; i < row.length; i++){
+		table += "<tr>";
+		table += "<td>" + row[i].getElementsByTagName("statnNm")[0].childNodes[0].nodeValue + "</td>";
+		table += "<td>" + row[i].getElementsByTagName("subwayId")[0].childNodes[0].nodeValue + "</td>";
+		table += "<td>" + row[i].getElementsByTagName("subwayNm")[0].childNodes[0].nodeValue + "</td>";
+		table += "<td>" + row[i].getElementsByTagName("statnNmEng")[0].childNodes[0].nodeValue + "</td>";
+		table += "</tr>";
+	}
+	document.getElementById('demoXML').innerHTML = table;
 	
 }
 
 function parseJSON(jsonText){
 
 	// TODO
+	var row = jsonText.stationList
+	var table = "<tr><th>호선</th><th>역명</th><th>승차인원</th><th>하차인원</th></tr>";
+	for(i = 0;i<row.length;i++){
+		table += "<tr>";
+		table += "<td>" + row[i].statnNm
+		table += "<td>" + row[i].subwayId
+		table += "<td>" + row[i].subwayNm
+		table += "<td>" + row[i].statnNmEng
+		table += "</tr>";
+	}
+	document.getElementById('demoJSON').innerHTML = table;
 
 }
 </script>

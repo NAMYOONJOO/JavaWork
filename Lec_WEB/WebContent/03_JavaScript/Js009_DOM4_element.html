@@ -33,7 +33,7 @@ span, input{
 	E.appendChild(A) : 
 		A를 E의 마지막 child 로 append 된다.
 	E.insertBefore(B, A) : 
-		E 의 child 중에  B 앞에 A를 child 로 insert 한다.
+		E 의 child 중에  A 앞에 B를 child 로 insert 한다.
 	E.removeChild(A) :
 		E 의 child 중에 A 를 제거한다.
  -->
@@ -70,12 +70,27 @@ var element = document.getElementById("div1");
 
 // appendChild()
 // TODO
+para = document.createElement("p");// <P> element 생성
+node = document.createTextNode("appendChilde()로 추가"); //#text 노드 생성
+para.appendChild(node)
+
+element.appendChild(para); //div 의 마지막 child로 append됨
+
 
 // insertBefore()
 // TODO
+para = document.createElement("p");// <P> element 생성
+node = document.createTextNode("insertBefore()로 추가"); //#text 노드 생성
+para.appendChild(node)
+
+element.insertBefore(para,document.getElementById('p1'))
 
 // removeChild()
 // TODO
+parent = document.getElementById('div1')
+child = document.getElementById('p2')
+parent.removeChild(child)
+
 
 </script>
 
@@ -88,12 +103,12 @@ var element = document.getElementById("div1");
 </tr>
 <tr>
 	<td><!-- this 는 그 element다 -->
-	<span onclick="TODO">
+	<span onclick="doChange(this)">
 	홍길동
 	</span>
 	</td>
 	<td>
-	<span onclick="TODO">
+	<span onclick="doChange(this)">
 	Mr.Hong
 	</span>
 	</td>
@@ -104,12 +119,52 @@ var element = document.getElementById("div1");
 <script>
 
 // TODO
+//document.getElementById('table1').style.border = '4px solid black'
+//document.getElementById('table1').setAttribute('style','border : 4px solid red')
+document.getElementById('table1').style.setProperty('border',' 4px solid cyan')
 
 </script>
 
 <script>
 
 // TODO
+
+function doChange(e){
+	var nodeName = e.nodeName.toUpperCase();
+	var parent = e.parentNode;
+
+	if(nodeName == "SPAN"){
+		// e 가 <span> 이었으면 <input> 으로 바꾸기
+		var txt = e.innerHTML.trim();
+		parent.removeChild(e);
+
+		var node = document.createElement("input");
+		node.value = txt;
+		
+		node.setAttribute('onfocusout', 'doChange(this)');
+		node.setAttribute('onkeydown', 'doEnter(this)');
+
+		parent.appendChild(node);
+		node.focus();
+	} else if (nodeName == "INPUT"){
+		// e 가 <input> 이었으면 <span> 으로 바꾸기
+		var txt = e.value.trim();
+		parent.removeChild(e);
+		
+		var node = document.createElement("span");
+		var txtNode = document.createTextNode(txt);
+		node.appendChild(txtNode);
+		node.setAttribute('onclick', 'doChange(this)');
+		parent.appendChild(node);
+	}
+}
+
+function doEnter(e){
+	if(event.keyCode == 13){  // ENTER 키코드 값 13
+		doChange(e);
+	}
+}
+
 
 </script>
 

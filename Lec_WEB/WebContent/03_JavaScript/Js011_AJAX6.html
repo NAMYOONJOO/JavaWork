@@ -46,6 +46,7 @@ http://openapi.seoul.go.kr:8088/(인증키)/json/SPOP_DAILYSUM_JACHI/1/5/
 
 <button type="button" onclick="loadData()">정보 가져오기</button>
 <button type="button" onclick="removeTable()">지우기</button>
+<!-- <h2 id = "datetest"></h2> -->
 </form>
 <br><br>
 <h2>AJAX + XML</h2>
@@ -56,7 +57,7 @@ http://openapi.seoul.go.kr:8088/(인증키)/json/SPOP_DAILYSUM_JACHI/1/5/
 
 
 <script>
-var api_key = "자신의 키값 입력";  // 자신의 키값 입력하기!
+var api_key ="6561536751626864373042464d4356";  // 자신의 키값 입력하기!
 
 function removeTable(){
 	document.getElementById('demoXML').removeChild(document.getElementById('demoXML').childNodes[0]);
@@ -66,18 +67,69 @@ function removeTable(){
 function loadData() {
 
 	// TODO
-	
+	var stdr_de_id = document.getElementById('stdr_de_id').value.trim().split("-")[0]
+					+ document.getElementById('stdr_de_id').value.trim().split("-")[1]
+					+ document.getElementById('stdr_de_id').value.trim().split("-")[2];
+	//document.getElementById('datetest').innerHTML = stdr_de_id
+	var start_index = document.getElementById('start_index').value.trim();
+	var end_index = document.getElementById('end_index').value.trim();
+	//XML
+	var url = "http://openapi.seoul.go.kr:8088/"+api_key+"/xml/SPOP_DAILYSUM_JACHI/"+start_index+"/"+end_index+"/"+stdr_de_id
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200){
+			parseXML(this.responseXML);
+		}
+	};
+	xhttp.open("GET", url, true);
+	xhttp.send();
+	//JSON
+	var url = "http://openapi.seoul.go.kr:8088/"+api_key+"/json/SPOP_DAILYSUM_JACHI/"+start_index+"/"+end_index+"/"+stdr_de_id
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function(){
+		if(this.readyState==4&&this.status==200){
+			var jsonObj = JSON.parse(this.responseText)
+			parseJSON(jsonObj);
+		}
+	}
+	xhttp.open("GET",url,true); 
+	xhttp.send()
 }
 
 function parseXML(xmlDOM) {
 
 	// TODO
+	var table = "<tr><th>날짜</th><th>구ID</th><th>총생활인구수</th><th>일최대이동인구수</th></tr>"
+	var row = xmlDOM.getElementsByTagName("row");
+	for(i = 0; i < row.length; i++){
+		table += "<tr>";
+		table += "<td>" + row[i].getElementsByTagName("STDR_DE_ID")[0].childNodes[0].nodeValue + "</td>";
+		table += "<td>" + row[i].getElementsByTagName("SIGNGU_CODE_SE")[0].childNodes[0].nodeValue + "</td>";
+		table += "<td>" + row[i].getElementsByTagName("TOT_LVPOP_CO")[0].childNodes[0].nodeValue + "</td>";
+		table += "<td>" + row[i].getElementsByTagName("DAIL_MXMM_MVMN_LVPOP_CO")[0].childNodes[0].nodeValue + "</td>";
+		table += "</tr>";
+	}
+	document.getElementById('demoXML').innerHTML = table;
+	
+
 
 }
 
 function parseJSON(jsonText){
 
 	// TODO
+	var row = jsonText.SPOP_DAILYSUM_JACHI.row
+	var table = "<tr><th>날짜</th><th>구ID</th><th>총생활인구수</th><th>일최대이동인구수</th></tr>"
+	for(i = 0;i<row.length;i++){
+		table += "<tr>";
+		table += "<td>" + row[i].STDR_DE_ID
+		table += "<td>" + row[i].SIGNGU_CODE_SE
+		table += "<td>" + row[i].TOT_LVPOP_CO
+		table += "<td>" + row[i].DAIL_MXMM_MVMN_LVPOP_CO
+		table += "</tr>";
+	}
+	document.getElementById('demoJSON').innerHTML = table;
+
 
 }
 </script>

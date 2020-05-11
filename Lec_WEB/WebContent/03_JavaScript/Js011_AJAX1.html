@@ -57,10 +57,23 @@
 </div>
 
 <script>
-var infoTxt = "https://www.w3schools.com/js/ajax_info.txt";
+var url = "https://www.w3schools.com/js/ajax_info.txt";
 function loadDoc() {
 
 	// TODO
+	var xhttp = new XMLHttpRequest();//XHR
+	xhttp.onreadystatechange = function(){
+		//진동밸(?)울렸을 때 수행할 동작들
+		if(this.readyState==4&&this.status==200){
+			document.getElementById('demo').innerHTML = 
+			this.responseText;
+
+		}
+	};
+	//커피주문
+	xhttp.open('GET', url,true)
+	xhttp.send();
+
 
 }
 </script>

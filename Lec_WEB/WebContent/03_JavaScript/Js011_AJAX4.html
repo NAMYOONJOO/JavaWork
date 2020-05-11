@@ -20,11 +20,11 @@ http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-12914&srvType=A&service
 샘플url
 
 XML 버젼
-http://openapi.seoul.go.kr:8088/키값을넣으세요/xml/CardSubwayStatsNew/1/5/20181001
+http://openapi.seoul.go.kr:8088/AIzaSyCrViexrJJX009FMJoKhp5VC9Zp6FEEmog/xml/CardSubwayStatsNew/1/5/20181001
 예) http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/xml/CardSubwayStatsNew/1/5/20181001  
 
 JSON 버젼
-http://openapi.seoul.go.kr:8088/키값을넣으세요/json/CardSubwayStatsNew/1/5/20181001
+http://openapi.seoul.go.kr:8088/AIzaSyCrViexrJJX009FMJoKhp5VC9Zp6FEEmog/json/CardSubwayStatsNew/1/5/20181001
 예) http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/json/CardSubwayStatsNew/1/5/20181001 
  -->
 <body>
@@ -44,17 +44,46 @@ http://openapi.seoul.go.kr:8088/키값을넣으세요/json/CardSubwayStatsNew/1/
 
 
 <script>
-var api_key = "당신의 키값을 입력하세요";
+var api_key = "6561536751626864373042464d4356";
 
 function removeTable(){
 
 	// TODO
+	document.getElementById('demoXML').innerHTML = "";
+	document.getElementById('demoJSON').innerHTML = "";
+
 
 }
 
 function loadData() {
 
 	// TODO
+	var date = document.getElementById('date').value.trim();
+
+	// XML
+	var url = "http://openapi.seoul.go.kr:8088/" + api_key +"/xml/CardSubwayStatsNew/1/5/" + date;
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200){
+			parseXML(this.responseXML);
+		}
+	};
+	xhttp.open("GET", url, true);
+	xhttp.send();
+	//JSON
+	var url = "http://openapi.seoul.go.kr:8088/"+api_key+"/json/CardSubwayStatsNew/1/5/"+date;
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function(){
+		if(this.readyState==4&&this.status==200){
+			var jsonObj = JSON.parse(this.responseText)
+			parseJSON(jsonObj);
+		}
+	}
+	xhttp.open("GET",url,true); //비동기?
+	xhttp.send()
+	
+
+
 
 } // end loadData()
 
@@ -62,11 +91,38 @@ function parseXML(xmlDOM) {
 
 	// TODO
 	
+	var table = "<tr><th>호선</th><th>역명</th><th>승차인원</th><th>하차인원</th></tr>";
+
+	var row = xmlDOM.getElementsByTagName("row");
+	for(i = 0; i < row.length; i++){
+		table += "<tr>";
+		table += "<td>" + row[i].getElementsByTagName("LINE_NUM")[0].childNodes[0].nodeValue + "</td>";
+		table += "<td>" + row[i].getElementsByTagName("SUB_STA_NM")[0].childNodes[0].nodeValue + "</td>";
+		table += "<td>" + row[i].getElementsByTagName("RIDE_PASGR_NUM")[0].childNodes[0].nodeValue + "</td>";
+		table += "<td>" + row[i].getElementsByTagName("ALIGHT_PASGR_NUM")[0].childNodes[0].nodeValue + "</td>";
+		table += "</tr>";
+	}
+
+	document.getElementById('demoXML').innerHTML = table;
+	
 }
 
 function parseJSON(jsonObj){
 
 	// TODO
+	var row = jsonObj.CardSubwayStatsNew.row;
+	var table = "<tr><th>호선</th><th>역명</th><th>승차인원</th><th>하차인원</th></tr>";
+	for(i = 0;i<row.length;i++){
+		table += "<tr>";
+		table += "<td>" + row[i].LINE_NUM
+		table += "<td>" + row[i].SUB_STA_NM
+		table += "<td>" + row[i].RIDE_PASGR_NUM
+		table += "<td>" + row[i].ALIGHT_PASGR_NUM
+
+
+		table += "</tr>";
+	}
+	document.getElementById('demoJSON').innerHTML = table;
 	
 }
 </script>

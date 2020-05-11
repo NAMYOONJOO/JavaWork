@@ -37,10 +37,31 @@ var clockAnimId = undefined;
 function clock(){
 
 	// TODO
+  if(!clockAnimId){
+    //에니메이션 시작
+    setInterval(tick,1000);
+  
+  }else{
+    //애니메이션 종료
+    clearInterval(clockAnimId)
+    clockAnimId = undefined
+  }
 
 }
 
 // TODO
+function tick(){
+  var d = new Date(); //현재시간
+  document.getElementById('timeboard').innerHTML = 
+  d.getFullYear()+"/"+
+  (d.getMonth()+1)+"/"+
+  d.getDate()+" "+
+  d.getHours() +":"+
+  d.getMinutes()+":"+
+  d.getSeconds()
+  
+}
+
 
 </script>
 
@@ -57,6 +78,22 @@ function clock(){
 function myMove() {
 
 	// TODO
+
+
+  var elem = document.getElementById('animate')
+  var pos = 0;
+
+  var id = setInterval(frame,5)
+  function frame(){
+    if(pos ==350){
+      clearInterval(id);
+    }else{
+      pos++;
+      elem.style.top = pos+"px"
+      elem.style.left = pos+"px"
+    }
+
+  }
 
 }
 </script>

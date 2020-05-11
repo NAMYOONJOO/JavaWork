@@ -25,15 +25,18 @@ location.reload() : 새로고침
 <h3>location</h3>
 <script>
 	//TODO  // 현재시각: reload() 확인용
+
+
 </script>
 
 
 <p id="demo"></p>
-<button type="button" onclick="TODO">assign()</button>
+<button type="button" onclick="location.assign('https://www.naver.com')">assign()</button>
 <br><br>
-<button type="button" onclick="TODO"> location.href = </button>
+<button type="button" onclick="location.href = 'https://www.naver.com'"> location.href = </button>
 <br><br>
-<button type="button" onclick="TODO"> reload() </button>
+<!-- location.href는 함수가 아니다.  -->
+<button type="button" onclick="location.reload()"> reload() </button>
 <br>
 
 
@@ -43,7 +46,7 @@ document.getElementById("demo").innerHTML =
 "호스트 이름 : <br>" + location.hostname + "<br>" + 
 "현 페이지 경로 : <br>" + location.pathname + "<br>" +
 "프로토콜 : <br>" + location.protocol + "<br>" +
-"포트번호 : <br> " + location.port + "<br>" +
+"포트번호 : <br> " + location.port + "<br>" + 
 "쿼리문자열 : <br> " + location.search + "<br>"
 </script>
 
