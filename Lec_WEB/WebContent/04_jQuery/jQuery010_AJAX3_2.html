@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>AJAX API서울시 지하철역사정보</title>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- jQuery 방식, $.ajax() 을 사용해서  -->
+<!--
+■서울시 지하철 역사 정보
+http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-12753&srvType=A&serviceKind=1&currentPageNo=1
+
+샘플url
+
+XML 버젼
+http://swopenAPI.seoul.go.kr/api/subway/키값넣으세요/xml/stationInfo/0/5/서울
+예] http://swopenAPI.seoul.go.kr/api/subway/4d46796d7366726f3833774a774955/xml/stationInfo/0/5/서울
+
+JSON 버젼
+http://swopenAPI.seoul.go.kr/api/subway/키값넣으세요/json/stationInfo/0/5/서울
+예] http://swopenAPI.seoul.go.kr/api/subway/4d46796d7366726f3833774a774955/json/stationInfo/0/5/서울 
+
+ -->
+<body>
+<h1>서울시 지하철 역사 정보</h1>
+<form>
+역명: <input type="text" id="station" value="서울"/><br><br>
+
+<button  id="btn_load" type="button" >역사정보 가져오기</button>
+<button  id="btn_remove"  type="button" >지우기</button>
+</form>
+<br><br>
+<h2>AJAX + XML</h2>
+<table id="demoXML"></table>
+<hr>
+<h2>AJAX + JSON</h2>
+<table id="demoJSON"></table>
+
+
+<script>
+var api_key = "6561536751626864373042464d4356";
+ 
+ $(document).ready(function(){
+	 $("#btn_load").click(function(){
+		 var station = document.getElementById("station").value.trim();
+		 
+		 // XML
+		 var url = "http://swopenAPI.seoul.go.kr/api/subway/"+api_key+"/xml/stationInfo/0/5/"+station;
+		 
+		 // TODO
+		 $.ajax({
+			 url : url,
+			 type : "GET",
+			 cache : false,
+			 success : function(data,status){
+				 if(status=="success")parseXML(data);
+				 
+			} 
+		 })
+		 
+		 
+		// JSON
+		url = "http://swopenAPI.seoul.go.kr/api/subway/"+api_key+"/json/stationInfo/0/5/"+station;
+		 
+		$.ajax({
+			url : url,
+			type : "GET",
+			cache : false,
+			success : function(data,status){
+				if(status=="success") parseJSON(data);
+			} 
+		 })
+		// TODO
+		
+	 });
+	 $("#btn_remove").click(function(){
+		$("#demoXML").html("");
+		$("#demoJSON").html("");
+	 });
+	});
+	 
+	 function parseXML(xmlDOM) {
+		var table = "<tr><th>역명</th><th>아이디</th><th>호선</th><th>영문명</th></tr>"
+		$(xmlDOM).find("row").each(function(){
+			table += "<tr>";
+			table += "<td>" + $(this).find("statnNm").text() + "</td>";
+			table += "<td>" + $(this).find("subwayId").text() + "</td>";
+			table += "<td>" + $(this).find("subwayNm").text() + "</td>";
+			table += "<td>" + $(this).find("statnNmEng").text() + "</td>";		
+			table += "</tr>";
+	});
+	$("#demoXML").html(table);
+	}
+	function parseJSON(jsonObj) {
+		var row = jsonObj.stationList
+		var table = "<tr><th>역명</th><th>아이디</th><th>호선</th><th>영문명</th></tr>"
+
+		var i;
+	
+		for (i = 0; i < row.length; i++) {
+			table += "<tr>";
+			table += "<td>" + row[i].statnNm + "</td>";
+			table += "<td>" + row[i].subwayId + "</td>";
+			table += "<td>" + row[i].subwayNm + "</td>";
+			table += "<td>" + row[i].statnNmEng + "</td>";
+			table += "</tr>";
+		}
+		$("#demoJSON").html(table);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+ 

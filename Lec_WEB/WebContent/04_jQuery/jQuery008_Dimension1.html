@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Dimension</title>
+<style>
+#div1 {
+    height: 150px;
+    width: 300px;
+    padding: 10px;
+    margin: 3px;
+    border: 1px solid blue;
+    background-color: lightblue;
+}
+
+#div3{
+	width: 100px;
+	height: 100px;
+	background-color: yellow;
+	position: absolute;
+}
+
+</style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+/*
+	element 의 사이즈나 
+ 	browser windows 사이즈 
+
+ 	width()  - element 의 width
+ 	height() - element 의 height
+ 	innerWidth() - width + padding
+ 	innerHeight() - height + padding
+ 	outerWidth() - innerWidth + border
+ 	outerHeight() - innerHeight + border
+ 	outerWidth(true) - innerWidth + border + margin
+ 	outerHeight(true) - innerHeight + border + margin
+*/
+
+// TODO
+
+</script>
+
+<body>
+
+<div id="div1"></div>
+<br>
+
+<button id="btn01">btn01 dimension</button>
+<br><br>
+<button id="btn02">btn02 set width&height</button>
+<br><br>
+<button id="btn03">btn03 doc & window</button>
+<br><br>
+<div id="div2"></div>
+
+<!-- TODO 윈도우 크기가 변경될때마다 자동으로 변경되게 하기 -->
+
+<hr>
+<div style="height:120px; position:relative;">
+	<div id="div3"></div>
+</div>
+<button id="btn04">btn04 anim</button>
+<button id="btn05">btn05 position</button>
+
+</body>
+</html>

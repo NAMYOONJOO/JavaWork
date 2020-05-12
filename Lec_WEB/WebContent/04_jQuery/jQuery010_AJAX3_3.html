@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>AJAX API자치구단위 서울 생활인구 일별 집계표</title>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- jQuery 방식, $.ajax() 을 사용해서  -->
+<!--
+■자치구단위 서울 생활인구 일별 집계표
+http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-15379&srvType=S&serviceKind=1&currentPageNo=1
+
+http://openapi.seoul.go.kr:8088/(인증키)/(요청파일타입)/SPOP_DAILYSUM_JACHI/(요청시작INDEX)/(요청종료INDEX)/(기준일ID)/(시군구코드)
+
+샘플url
+
+XML 버젼
+http://openapi.seoul.go.kr:8088/(인증키)/xml/SPOP_DAILYSUM_JACHI/1/5/
+예] http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/xml/SPOP_DAILYSUM_JACHI/1/5/
+예] http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/xml/SPOP_DAILYSUM_JACHI/1/5/20190101
+예] http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/xml/SPOP_DAILYSUM_JACHI/1/5/20190101/11000
+
+JSON 버젼
+http://openapi.seoul.go.kr:8088/(인증키)/json/SPOP_DAILYSUM_JACHI/1/5/
+예] http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/json/SPOP_DAILYSUM_JACHI/1/5/
+예] http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/json/SPOP_DAILYSUM_JACHI/1/5/20190101
+예] http://openapi.seoul.go.kr:8088/4d46796d7366726f3833774a774955/json/SPOP_DAILYSUM_JACHI/1/5/20190101/11000
+
+
+※ 한번에 1000개 까지의 데이터만 볼수 있슴
+
+ -->
+<body>
+<h1>자치구단위 서울 생활인구 일별 집계표</h1>
+<form>
+날짜: <input type="date" id="stdr_de_id" value="2019-01-01" placeholder="yyyy-mm-dd"/><br>
+시작index <input type="number" id="start_index" value="1"/><br>
+끝index <input type="number" id="end_index" value="5"/><br><br>
+
+<button type="button"  id="btn_load">정보 가져오기</button>
+<button type="button" id="btn_remove">지우기</button>
+<!-- <h2 id = "datetest"></h2> -->
+</form>
+<br><br>
+<h2>AJAX + XML</h2>
+<table id="demoXML"></table>
+<hr>
+<h2>AJAX + JSON</h2>
+<table id="demoJSON"></table>
+
+
+<script>
+var api_key ="6561536751626864373042464d4356";  // 자신의 키값 입력하기!
+
+$(document).ready(function(){
+	 $("#btn_load").click(function(){
+		 var stdr_de_id = document.getElementById('stdr_de_id').value.trim().split("-")[0]
+					+ document.getElementById('stdr_de_id').value.trim().split("-")[1]
+					+ document.getElementById('stdr_de_id').value.trim().split("-")[2];
+	//document.getElementById('datetest').innerHTML = stdr_de_id
+	var start_index = document.getElementById('start_index').value.trim();
+	var end_index = document.getElementById('end_index').value.trim();
+		 // XML
+		 var url = "http://openapi.seoul.go.kr:8088/"+api_key+"/xml/SPOP_DAILYSUM_JACHI/"+start_index+"/"+end_index+"/"+stdr_de_id
+
+		 // TODO
+		 $.ajax({
+			 url : url,
+			 type : "GET",
+			 cache : false,
+			 success : function(data,status){
+				 if(status=="success")parseXML(data);
+				 
+			} 
+		 })
+		 
+		 
+		// JSON
+		var url = "http://openapi.seoul.go.kr:8088/"+api_key+"/json/SPOP_DAILYSUM_JACHI/"+start_index+"/"+end_index+"/"+stdr_de_id
+
+		$.ajax({
+			url : url,
+			type : "GET",
+			cache : false,
+			success : function(data,status){
+				if(status=="success") parseJSON(data);
+			} 
+		 })
+		// TODO
+		
+	 });
+	 $("#btn_remove").click(function(){
+		$("#demoXML").html("");
+		$("#demoJSON").html("");
+	 });
+	});
+	 
+	 function parseXML(xmlDOM) {
+	var table = "<tr><th>날짜</th><th>구ID</th><th>총생활인구수</th><th>일최대이동인구수</th></tr>"
+		
+		$(xmlDOM).find("row").each(function(){
+			table += "<tr>";
+			table += "<td>" + $(this).find("STDR_DE_ID").text() + "</td>";
+			table += "<td>" + $(this).find("SIGNGU_CODE_SE").text() + "</td>";
+			table += "<td>" + $(this).find("TOT_LVPOP_CO").text() + "</td>";
+			table += "<td>" + $(this).find("DAIL_MXMM_MVMN_LVPOP_CO").text() + "</td>";	
+			table += "</tr>";
+	});
+	$("#demoXML").html(table);
+	}
+	function parseJSON(jsonObj) {
+		var row = jsonObj.SPOP_DAILYSUM_JACHI.row
+		var table = "<tr><th>날짜</th><th>구ID</th><th>총생활인구수</th><th>일최대이동인구수</th></tr>"
+
+
+		var i;
+	
+		for (i = 0; i < row.length; i++) {
+			table += "<tr>";
+			table += "<td>" + row[i].STDR_DE_ID + "</td>";
+			table += "<td>" + row[i].SIGNGU_CODE_SE + "</td>";
+			table += "<td>" + row[i].TOT_LVPOP_CO + "</td>";
+			table += "<td>" + row[i].DAIL_MXMM_MVMN_LVPOP_CO + "</td>";
+			table += "</tr>";
+		}
+		$("#demoJSON").html(table);
+}
+
+
+</script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

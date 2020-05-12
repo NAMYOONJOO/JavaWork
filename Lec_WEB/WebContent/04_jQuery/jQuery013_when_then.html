@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>when & then</title>
+<style>
+.box1 {
+	width:150px;
+	height : 150px;
+	background-color:  #3f8d3f;
+	position: absolute;
+	left : 50px;
+	top : 0;
+}
+.box2 {
+	width:150px;
+	height:150px;
+	background-color:  #82d3f2;
+	position: absolute;
+	left :50px;
+	top :150px;
+}
+.box3 {
+	width:150px;
+	height:150px;
+	background-color:  yellow;
+	position: absolute;
+	left :50px;
+	top :300px;
+}
+</style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+/*
+	$.when() 함수는 
+	thenable object 들 (다른말로 deferred object)들의
+	이벤트가 끝나면 리턴타입은 Promise 객체 리턴
+	https://api.jquery.com/jquery.when/
+		  
+	deferred.then() 함수
+	deferred 들이 다 마무리 되면 콜백 함수 호출
+	https://api.jquery.com/deferred.then/
+ */
+$(document).ready(function(){
+	$("#run").click(function(e){
+		  var $box1 = $(".box1");
+		  var $box2 = $(".box2");
+		  var $box3 = $(".box3");
+
+		  // TODO
+		  
+	});	
+});
+</script>
+
+<body>
+<button id="run">run</button>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

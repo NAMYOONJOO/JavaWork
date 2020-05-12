@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>jQuery Syntax</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- 
+기본적은 jQuery 구문은 
+
+HTML element 선택 +  그 element 에 동작(action) 수행
+
+	기본구문:
+	
+	$(selector).action()
+	
+		$ : jQuery 에 접근하기 위한 함수
+		(selector) : 다양한 방법으로 element 선택 가능.
+	
+	
+	$(this).hide() - 현재 element.
+	$("p").hide() - 모든 <p> element 를 숨긴다
+	$(".test").hide() - class="test" 인 모든 element 를 숨긴다 
+	$("#test").hide() - id="test" 인 모든 element 를 숨긴다
+
+ -->
+ 
+ <script>
+// 	기본적으로 jQuery을 사용하는 웹페이지들은
+//	다음 코드로 시작함
+//$(document).ready(함수);
+$(document).ready(function(){
+	alert('ready()')
+})
+
+// TODO
+
+//'document' 즉, 웹문서의 로딩이 '완료'되면
+//ready() 의 매개변수로 주어진 함수를 수행
+
+// TODO
+$(document).ready(function(){
+	alert('김우경 똥')
+})
+
+
+// 축약된 형태도 많이 사용
+//$(함수);
+
+// TODO
+$(function(){
+	alert('똥김우경')
+})
+
+$(document).ready(function(){
+	$("button").click(function(){
+		$("p").hide()
+	})
+})
+
+
+// TODO
+
+</script>
+ 
+<body>
+
+<h2>jQuery 기본구문</h2>
+
+<p>p 요소 입니다</p>
+<p>이것도 p 요소 입니다</p>
+
+<button>클릭</button>
+
+</body>
+</html>

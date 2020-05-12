@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Hide & Show</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+// TODO
+
+ //이벤트 함수에는 여러개의 함수를 등록할수 있다.
+ $(document).ready(function(){
+    $("#hide").click(function(){
+        $("p").hide();
+    });
+});
+
+$(document).ready(function(){
+    $("#show").click(function(){
+        $("p").show();
+    });
+});
+ 
+ 
+
+
+</script>
+</head>
+<body>
+
+<p>Hide 버튼을 누르면 사라지는 매직!</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+</body>
+</html>
