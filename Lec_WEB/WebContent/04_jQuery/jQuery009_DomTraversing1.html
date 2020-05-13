@@ -59,27 +59,34 @@ $(document).ready(function(){
 	// 어떤 버튼이든지 눌리면 selected 클래스 제거
 	$("button").click(function(){
 		// TODO  
+		$('*').removeClass('selected')
 	});
 	
 	//---------------------------------------------
 	// parent()
 	$("#btn11").click(function(){
 		// TODO  
+		$('span').parent().addClass('selected')
 	});
 	
 	// parents()
 	$("#btn12").click(function(){
 		// TODO  
+		$('span').parents().addClass('selected')
 	});
 	
 	// parents("ul")
 	$("#btn13").click(function(){
-		// TODO  
+		// TODO 
+		// span의 조상주 ul만 선택됨 
+		$('span').parents('ul').addClass('selected')
 	});
 	
 	// parentesUntil()
 	$("#btn14").click(function(){
 		// TODO  
+		// div 는 포함하지 않는다. 
+		$('span').parentsUntil('div').addClass('selected')
 	});
 	
 	//-----------------------------------------
@@ -87,16 +94,19 @@ $(document).ready(function(){
 	// children
 	$("#btn21").click(function(){
 		// TODO  
+		$('div').children().addClass('selected')
 	});
 	
 	// children("..")
 	$("#btn22").click(function(){
 		// TODO  
+		$('div').children('p').addClass('selected')
 	});
 	
 	// find()
 	$("#btn23").click(function(){
 		// TODO  
+		$('div').find('span').addClass('selected')
 	});
 	
 	// find(*)
@@ -108,31 +118,42 @@ $(document).ready(function(){
 	// siblings()
 	$("#btn31").click(function(){
 		// TODO  
+		$('#sibling h2').siblings().addClass('selected')
+		// h2의 형재들만 선택 ( CSS구현 못한다. )
 	});
 
 	$("#btn32").click(function(){
 		// TODO  
+		$('#sibling h2').siblings('p').addClass('selected')
+		//h2의 형제중 p만 찾기 
 	});
 
 	// next()
 	$("#btn33").click(function(){
 		// TODO  
+		$('#sibling h2').next().addClass('selected')
+		//h2 의 동생 선택
 	});
 	
 	// nextAll()
 	$("#btn34").click(function(){
 		// TODO  
+		$('#sibling h2').nextAll().addClass('selected')
+		//밑으로 동생들 모두
 	});
 	
 	// nextUntil(..)
 	$("#btn35").click(function(){
 		// TODO  
+		$('#sibling h2').nextUntil('h6').addClass('selected')
+		//h6 전까지 (포함 X)
 	});
 	
 	// TODO.. 나머지는 직접 해보자
 	// prev()
 	$("#btn36").click(function(){
 		// TODO  
+		
 	});
 	
 	// prevAll()
@@ -166,7 +187,7 @@ $(document).ready(function(){
       </p> 
   </div>
   
-	<div id="sibling">div (parent)
+	<div id="sibling">div (parent) #sibling
 		<p>p</p>
 		<span>span</span>
 		<h2>h2</h2>

@@ -19,6 +19,7 @@
 	background-color: tomato;
 	margin: 0;
 	padding: 0;
+	
 }
 </style>
 </head>
@@ -26,9 +27,38 @@
 <script>
 
 // TODO
+	$(document).ready(function(){
+		//클릭시 좌표알아내기
+		$(document).click(function(event){
+			//화면에 클릭한 좌표 
+			//alert(event.pageX+" "+event.pageY) 확인용
+			var txt = event.pageX+" "+event.pageY
+			$('#div1').css({
+				'left':event.pageX,
+				'top': event.pageY,
+			})
+			$('#div').text(txt)
+//클릭한 곳에 동그라미가 나타났다 사라지게 하기
+
+			$('#circle').css({
+				'left':event.pageX-($('#circle').outerWidth(true)/2),
+				'top': event.pageY-($('#circle').outerHeight(true)/2)
+			})
+			// $('#circle').fadeIn(2000).fadeOut(2000)
+			$('#circle').stop(true).fadeIn(100,function(){
+				$('#circle').fadeOut(2000);
+			})
+
+		})
+
+
+
+
+	})
 
 </script>
 <body>
+	<h1>화면클릭해보세요</h1>
 <div id="div1"></div>
 <div id="circle"></div>
 </body>

@@ -21,6 +21,26 @@ tr:nth-child(even){
 <script>
 
 // TODO
+$(document).ready(function(){
+
+
+	$('#myInput').on('keyup',function(){
+		var value = $(this).val().toLowerCase();
+
+		//filter(callback)
+		//callback() 안에서 각각 element에 대한 조작 가능
+		$("#myTable tr").filter(function(){
+			$(this).toggle($(this).text().toLowerCase().indexOf(value)>-1)
+			//toggle : 사라지기 , 나타나기
+			 //toggel(true) : 나타나기 toggle(false) : 사라지기
+			 //indexOf 찾은 인덱스를 반환
+			 //못찾으면 -1
+		})
+	})
+
+
+
+})
 
 </script>
 

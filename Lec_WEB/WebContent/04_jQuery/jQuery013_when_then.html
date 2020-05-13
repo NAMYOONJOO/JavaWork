@@ -49,8 +49,42 @@ $(document).ready(function(){
 		  var $box2 = $(".box2");
 		  var $box3 = $(".box3");
 
+
 		  // TODO
 		  
+		//   $box1.animate({left : "200px"},2000)
+		//   $box2.animate({top:'0px'},1000)
+		//   $box3.animate({top:'150px'},2000)
+		
+		//$box1 과 $box2 의 애니메이션이 다 끝나고 나서 $ box3가 움직이게 하려면
+		
+		//방법 : box2 끝나구 수행
+	    // $box1.animate({left : "200px"},1000)
+	    // $box2.animate({top:'0px'},1500,function(){
+	    // $box3.animate({top:'150px'},2000,function(){
+		// 	$box3.animate({top:'500px'},2000)
+		// })})
+		//콜백안에 콜백.. 콜백지옥
+
+		//방법 : delay()
+		//   $box1.animate({left : "200px"},2000)
+		//   $box2.animate({top:'0px'},1000)
+		//   $box3.delay(1500).animate({top:'150px'},2000)
+	
+		//$box1과 #box2중 누가 먼저 끝나는지 알 수 없다면
+		//얼마후에 끝나는지도 알수 없다면
+
+		//방법
+		//방법 : $.when()사용
+		// 이벤트들이 끝나면 수행하는  Promise 객체 리턴
+		// thenable object (다른말로 deferred object)
+		$box1.animate({left : "200px"},2000)
+		$box2.animate({top:'0px'},1000)
+		$.when($box1, $box2).then(function(){
+			$box3.animate({top:'150px'},2000)
+		})
+		// $box3.animate({top:'150px'},2000)
+ 
 	});	
 });
 </script>

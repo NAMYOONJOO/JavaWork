@@ -39,6 +39,48 @@
 */
 
 // TODO
+$(document).ready(function(){
+	$('#btn01').click(function(){
+		var div1 = $("#div1")
+		var txt = ""
+		txt+='width:'+div1.width()+'<br>'		
+		txt+='width:'+div1.height()+'<br>'		
+		txt+='width:'+div1.innerWidth()+'<br>'		
+		txt+='width:'+div1.innerHeight()+'<br>'			
+		txt+='width:'+div1.outerWidth()+'<br>'			
+		txt+='width:'+div1.outerHeight()+'<br>'			
+		txt+='width:'+div1.outerWidth(true)+'<br>'			
+		txt+='width:'+div1.outerHeight(true)+'<br>'	
+		div1.html(txt)		
+	})
+//width(), height() 에 매개변수 주면 새로운 값으로 세팅
+	$('#btn02').click(function(){
+		$('#div1').width(500)
+	})
+	// $(document) : HTML document
+	// $(window) : browser viewport
+	// document가  window 보다 클 수 있다. (스크롤바 생김)
+
+	$('#btn03').click(function(){
+		var txt=""
+		txt +='Document W/H : '+$(document).width()
+			+'x'+$(document).height()+"<br>"
+		txt +='Document W/H : '+$(window).width()
+			+'x'+$(window).height()+"<br>"
+			$('#div2').html(txt)	
+	})
+	//브라우저 창의 크기가 변할 때 onresize 이벤트 발생
+	$(window).resize(function(){
+		var txt=""
+		txt +='Document W/H : '+$(document).width()
+			+'x'+$(document).height()+"<br>"
+		txt +='Document W/H : '+$(window).width()
+			+'x'+$(window).height()+"<br>"
+			$('#div2').html(txt)	
+
+	})
+})
+
 
 </script>
 

@@ -47,27 +47,37 @@ button {
 	 //---------------------------------------
 	 // first() select 된것들중 첫번째
 	 $("#btn11").click(function(){
-	 	// TODO
-	 });
-
-	 // last() select 된것들중 마지막
-	 $("#btn12").click(function(){
-		 	// TODO
-	 });
-
-	// eq(i) 인덱스로 선택 가능
-	 $("#btn13").click(function(){
-		 	// TODO
+		 // TODO
+		 $('div').first().addClass('selected')
+		});
+		
+		// last() select 된것들중 마지막
+		$("#btn12").click(function(){
+			// TODO
+			$('div').last().addClass('selected')
+			
+		});
+		
+		// eq(i) 인덱스로 선택 가능
+		$("#btn13").click(function(){
+			// TODO
+			$('div').eq(1).addClass('selected')
 	});
 	
 	// filter() 
 	 $("#btn14").click(function(){
-		 	// TODO
+			 // TODO
+			$('div').filter('.intro').addClass('selected')
+			 
 	});
 	
 	// not()
 	 $("#btn15").click(function(){
-		 	// TODO
+			 // TODO
+			$('div').not('.intro').addClass('selected')
+			//이거는 빼고 선택
+			//filter와 반대로 출력
+			 
 	});
 	 
 	 
