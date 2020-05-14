@@ -11,7 +11,7 @@
 <h2>Modal Login Form</h2>
 
 <!-- Button to open the modal login form -->
-<button onclick="TODO">Login</button>
+<button id = "loginBtn" style="width: auto;">Login</button>
 
 <!-- The Modal -->
 <div id="id01" class="modal">
@@ -20,19 +20,28 @@
 	<form class="modal-content animate" action="https://www.w3schools.com/action_page.php" method="post">
 	  <div class="imgcontainer">
   		<!-- 닫기버튼  -->
-  		
+  		<span class="close">&times;</span>
   		<!-- 이미지  -->
-  		
+  		<img src = '../img/img_avatar2.png' class="avatar" alt = 'Avatar'>
 	  </div>
 	
 	  <div class="container">
-	    <!-- 로그인 form -->
-	  </div>
+		<!-- 로그인 form -->
+		<label for='uname'><b>Username</b></label>
+		<input type = 'text' placeholder="Enter Username" name="uname" required>
+		<label for='psw'><b>Password</b></label>
+		<input type = 'password' placeholder= "Enter Passholder" name="psw" required>
+		<button type="submit">Login</button>
+		<label >
+			<input type="checkbox" name="remember" checked>remember me
+		</label>
+	</div>
 	
 	  <div class="container" style="background-color:#f1f1f1">
 	    <!-- 취소 버튼 -->
-	    
-	    <!-- 비밀번호 잊으셨나요? -->
+	    <button type="button" class="cancelbtn">Cancel</button>
+		<!-- 비밀번호 잊으셨나요? -->
+		<span class="psw">Forgot<a href="#">password</a></span>
 	    
 	  </div>
 	</form>
@@ -43,7 +52,20 @@
 <script>
 
 // TODO
-
+var loginBtn = document.getElementById('loginBtn');
+var modal = document.getElementById('id01')
+loginBtn.onclick = function(){
+	modal.style.display = "block"
+}
+var close = document.getElementsByClassName('close')[0]
+close.onclick = function(){
+	modal.style.display='none'
+}
+window.onclick = function(event){
+	if(event.target==modal){
+		modal.style.display ='none'
+	}
+}
 </script>
 
 </body>

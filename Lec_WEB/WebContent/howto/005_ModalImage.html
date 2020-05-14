@@ -18,14 +18,28 @@ modal 안의 텍스트도 alt 를 사용해서 나타나게 함</p>
 <!-- The Modal -->
 <div id="myModal" class="modal">
   <span class="close">&times;</span>
-  <img class="modal-content" id="img01">
+  
   <div id="caption"></div>
 </div>
 
 <script>
 
-// TODO
-
-</script>
-</body>
-</html>
+  var modal = document.getElementById('myModal');
+  var img = document.getElementById('myImg');
+  var modalImg = document.getElementById('img01');
+  var captionText = document.getElementById('caption');
+  
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;   // this 는 myImg 
+    captionText.innerHTML = this.alt;
+  }
+  
+  var close = document.getElementsByClassName("close")[0];
+  close.onclick = function(){
+    modal.style.display = "none";
+  }
+  
+  </script>
+  </body>
+  </html>
