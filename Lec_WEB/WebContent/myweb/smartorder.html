@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <link href="GoldCoffeeCSS.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Black+Han+Sans&family=Lobster&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
@@ -10,6 +14,7 @@
     <script type="text/javascript" src="GoldCoffeeJS.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="https://image.freepik.com/free-photo/gold-letter-g_2227-955.jpg">
 
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Smart Order</title>
 </head>
 <body>
@@ -27,12 +32,138 @@
             </nav>
         </div>
     </div>
-    <div id = 'Ordermain1'>
-        <div>배달 주문</div>
-        <div>매장 주문</div>
+    <div id='top2' class="page2">
+        <div id = 'title'><h1>GOLD<br>COFFEE</h1></div>
+        <div class="clear"></div>     
+        <div id = 'top_menu'>
+            <nav id = 'menu'>
+                <ul>
+                    <li><a href = "#">메뉴</a></li>
+                    <li><a href = "#">매장소개</a></li>
+                    <li><a href = "#">주문</a></li>
+                    <li><a href = "#">문의</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-    
-    <div id = 'main2'>
+    <div id='Ordermain'>
+        <div id = 'Ordermain1'>
+            <h1>배달/포장/매장 주문</h1>
+        </div>
+        <hr>
+        <div id = 'Ordermain2'>
+            <button id = "orderbtn1"><i class="fas fa-motorcycle"></i><br>배달주문</button>
+            <button id = "orderbtn2"><i class="fas fa-shopping-bag"></i> <br>포장주문</button>
+            <button id = "orderbtn3"><i class="fas fa-coffee"></i> <br>매장주문</button>
+        </div>
+        
+        <div id = 'Ordermain3'>
+            <div>
+                주문전화 010-4519-1597 ( 09:00 ~ 18:00)
+                <button><i class="fas fa-phone-alt"></i> 전화하기</button>
+            </div>
+            <div>
+                고객만족센터 010-8915-2865 ( 09:00 ~ 18:00)
+                <button><i class="fas fa-phone-alt"></i> 전화하기</button>
+            </div>
+        </div>
+        <div id = 'Ordermain4'>
+            <h1>제휴 할인 / 이달의 할인</h1>
+        </div>
+    </div>  
+    <!-- 주문 팝업 -->
+    <div id = 'orderpopup1' class="modal">
+        <div class = 'modal-content animate' >
+            <span class="close">&times;</span>
+            <nav id = 'menubar'>
+                <ul>
+                    <li id = "menu1">ICE Coffee</li>
+                    <li id = "menu2">HOT Coffee</li>
+                    <li id = "menu3">Beverage</li>
+                </ul>
+            </nav>
+            <div class="clear"></div>
+            <div id = 'ordermenu'>
+                <div id = 'Omenu1'>
+                    <ul> 
+                        <li class='ordermenu' id="menu1-1" value=3000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201808160415316710.png"><br>ICE 아메리카노</li>
+                        <li class='ordermenu' id="menu1-2" value=4000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201808160415415770.png"><br>ICE 카페라떼</li>
+                        <li class='ordermenu' id="menu1-3" value=4000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201608310431041070.png"><br>ICE 밀크티 크림라떼</li>
+                        <li class='ordermenu' id="menu1-4" value=4500><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201905221111235050.png"><br>ICE 티라미스 크림라떼</li>
+                        <div class="clear"></div>
+                        <li class='ordermenu' id="menu1-5" value=5000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_202005060443211130.png"><br>ICE 흑당 카페라떼</li>
+                        <li class='ordermenu' id="menu1-6" value=5000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_202005060441052040.png"><br>ICE 바닐라 라떼</li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+
+                <div id = 'Omenu2'>
+                    <ul>
+                        <li class='ordermenu' id="menu2-1" value=4000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201905220142317090.png"><br>HOT 아메리카노</li>
+                        <li class='ordermenu' id="menu2-2" value=4300><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201905220139212410.png"><br>HOT 카페라떼</li>
+                        <li class='ordermenu' id="menu2-3" value=4700><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_202003021038314320.png"><br>HOT 바닐라 딜라이트</li>
+                        <li class='ordermenu' id="menu2-4" value=5000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201811011216224680.png"><br>HOT 리스트레또 라떼</li>
+                        <div class="clear"></div>
+                        <li class='ordermenu' id="menu2-5" value=5000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201905220126041160.png"><br>HOT 카라멜 딜라이트</li>
+                        <li class='ordermenu' id="menu2-6" value=5000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201905220133038920.png"><br>HOT 카페모카</li>
+                        <li class='ordermenu' id="menu2-7" value=5000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201905220134475420.png"><br>HOT 카푸치노</li>
+                        <li class='ordermenu' id="menu2-8" value=5000><img src="http://admin.hollys.co.kr/upload/menu/etc/coffee_img16.png"><br>HOT 에스프레소<br>마키아또</li>
+                        <div class="clear"></div>
+                        <li class='ordermenu' id="menu2-9" value=3000><img src="http://admin.hollys.co.kr/upload/menu/etc/coffee_img15.png"><br>HOT 에스프레소 꼰빠냐</li>
+                        <li class='ordermenu' id="menu2-10" value=3200><img src="http://admin.hollys.co.kr/upload/menu/etc/coffee_img14.png"><br>에스프레소</li>
+                    </ul>
+                </div>
+                <div id = 'Omenu3'>
+                    <ul>
+                        <li class='ordermenu' id="menu3-1" value=5000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201905220142317090.png"><br>흑당 버블 라떼</li>
+                        <li class='ordermenu' id="menu3-2" value=5500><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201910240241538460.png"><br>유자 캐모마일</li>
+                        <li class='ordermenu' id="menu3-3" value=6000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201910240242172340.png"><br>복숭아 얼그레이</li>
+                        <li class='ordermenu' id="menu3-4" value=4000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201704140121236430.png"><br>고구마 라떼</li>
+                        <div class="clear"></div>
+                        <li class='ordermenu' id="menu3-5" value=3000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201811011217059650.png"><br>히비스커스 TEA</li>
+                        <li class='ordermenu' id="menu3-6" value=3000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201811011216565240.png"><br>피치우롱 TEA</li>
+                        <li class='ordermenu' id="menu3-7" value=3000><img src="http://admin.hollys.co.kr/upload/menu/etc/tea_img07.png"><br>페퍼민트 TEA</li>
+                        <li class='ordermenu' id="menu3-8" value=3000><img src="http://admin.hollys.co.kr/upload/menu/etc/tea_img04.png"><br>캐모마일 TEA</li>
+                        <div class="clear"></div>
+                        <li class='ordermenu' id="menu3-9" value=3000><img src="http://admin.hollys.co.kr/upload/menu/etc/tea_img02.png"><br>얼그레이</li>
+                        <li class='ordermenu' id="menu3-10" value=4000><img src="http://admin.hollys.co.kr/upload/menu/etc/bever_img07.png"><br>밀크티라떼</li>
+                        <li class='ordermenu' id="menu3-11" value=4000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201704140253086290.png"><br>그린티라떼</li>
+                        <li class='ordermenu' id="menu3-12" value=4000><img src="http://admin.hollys.co.kr/upload/menu/etc/menuEtc_201704140252469270.png"><br>핫초코</li>
+                        <li class='ordermenu' id="menu3-13" value=4000><img src="http://admin.hollys.co.kr/upload/menu/etc/bever_img09.png"><br>화이트초코</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <h3 id='ordertitle'><i class="fas fa-shopping-basket"></i> ORDER</h3>
+            <div id='orderlist'></div>
+            <div id = 'orderprice'>0 원</div>
+            <div id = 'orderdiv'><button id = 'orderbtn'>주문하기</button></div>
+            <div class="clear"></div>
+
+
+        </div>
+    </div>
+
+    <div id = 'orderpopup2' class="modal">
+        <div class = 'modal-content animate'>
+            <span class="close">&times;</span>
+            <h1>결제 정보</h1>
+            <div id = orderpopup2-1>
+                <form ></form>
+                <h2>결제수단 선택</h2>
+                <input type="radio" name ="결제수단" value="신용카드" checked> 신용카드
+                <input type="radio" name ="결제수단" value="카카오페이" onclick="return(false)"> 카카오페이
+                <input type="radio" name ="결제수단" value="현금결제" onclick="return(false)" > 현금결제
+                <!-- 현재는 신용카드결제만 가능 -->
+                <hr>
+                <h2>카드정보 입력</h2>
+                <button id="ordersubmit" type='submit'>주문완료</button>
+            </div>
+            
+        </div>
+
+    </div>
+    <!-- <div id = 'main2'>
         <hr>
         <div id='main2-1'>
             <h1>MENU</h1>
@@ -41,8 +172,8 @@
         <div id='main2-2'>
             <h2><img src="https://www.starbucksathome.com/kr/sites/g/files/dzyqzn2046/files/styles/featured_product_desktop/public/2019-09/4Fundamentals_ArticleHeader_Desktop_1176x712_0.jpg?itok=rrviRhCS"></h2>
         </div>       
-    </div>
-    <div id = 'bottom'>
+    </div> -->
+    <div id = 'bottom' class="page2bt">
         <h1 id='bottomtitle'><img id='logo' src="https://www.galanni.com.au/wp-content/uploads/2017/08/cropped-G-LOGO-1.png"><br>Gold Coffee</h1>
         <h1 id='bottomcontent'>
             Gold Coffee®와 Gold Coffee로고는 YJCompany의 라이센스하에 사용되는 Gold Coffee Corporation의 등록 상표입니다.<br>     
@@ -52,5 +183,8 @@
 대표번호 : (TEL) Gold Coffee® by YJCompany : 080-777-7777 / (TEL) Gold Coffee® by 윤주네방구석 : 010-8915-2865<br>
         </h1>
     </div>
+
+
+    
 </body>
 </html>
