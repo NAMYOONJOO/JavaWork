@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- MaxCDN 사용 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <link href="GoldCoffeeCSS.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Black+Han+Sans&family=Lobster&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="GoldCoffeeJS.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="https://image.freepik.com/free-photo/gold-letter-g_2227-955.jpg">
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <title>Place</title>
+
+</head>
+<body>
+    <div id='top' class="page3">
+        <div id = 'title'><h1><br>GOLD<br>COFFEE</h1></div>
+        <div class="clear"></div>     
+        <div id = 'top_menu'>
+            <nav id = 'menu'>
+                <ul>
+                    <li><a href = "#">메뉴</a></li>
+                    <li><a href = "#">매장소개</a></li>
+                    <li><a href = "#">주문</a></li>
+                    <li><a href = "#">문의</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div id='top2' class="page2">
+        <div id = 'title'><h1>GOLD<br>COFFEE</h1></div>
+        <div class="clear"></div>     
+        <div id = 'top_menu'>
+            <nav id = 'menu'>
+                <ul>
+                    <li><a href = "#">메뉴</a></li>
+                    <li><a href = "#">매장소개</a></li>
+                    <li><a href = "#">주문</a></li>
+                    <li><a href = "#">문의</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div id='placemain'>
+        <h1>매장 찾기</h1>
+        <br>
+        <div id = 'placemain1'>
+            <div class="row">
+                <div class="col-sm-8" ><input type="text" name="location" placeholder="현재위치 또는 지역명 입력 ex) 서울시" id ='location'></div>
+                <div class="col-sm-2" ><button  id="btn_search" type="button" >검색</button></div>
+                <div class="col-sm-2" ><button  id="btn_search2" type="button" ><i class="fas fa-map-marker-alt"></i></button></div>
+            </div>
+
+        </div>
+        <hr>
+        <div id="map"></div>
+        <br>
+        <h id = 'resultlocation'>매장 검색 결과 0 건</h>
+        <table id="storelist"></table>
+
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ad5d4e40850394cbdf4da8bbdd046a92"></script>
+        <script type="text/javascript" src="Ajax.js"></script>
+    </div>
+    <div class="clear"></div>
+
+    <div id = 'bottom_page3'>
+        <h1 id='bottomtitle'><img id='logo' src="https://www.galanni.com.au/wp-content/uploads/2017/08/cropped-G-LOGO-1.png"><br>Gold Coffee</h1>
+        <h1 id='bottomcontent'>
+            Gold Coffee®와 Gold Coffee로고는 YJCompany의 라이센스하에 사용되는 Gold Coffee Corporation의 등록 상표입니다.<br>     
+            다른 모든 상표는 해당 소유자의 자산입니다.<br>
+            상호명 : 코리아 아이티 H회사 / 대표자 : 남윤주 / 사업자등록번호 : 777-77-7777<br>
+            주소 : 서울특별시 서대문구 충정로 70 / E-mail : CSU@kr.nestle.com <br>
+            대표번호 : (TEL) Gold Coffee® by YJCompany : 080-777-7777 / (TEL) Gold Coffee® by 윤주네방구석 : 010-8915-2865<br>
+        </h1>
+    </div>
+
+
+    
+</body>
+</html>

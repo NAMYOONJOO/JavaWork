@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
     <link href="GoldCoffeeCSS.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Black+Han+Sans&family=Lobster&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Nanum+Myeongjo:wght@800&family=Black+Han+Sans&family=Lobster&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="https://image.freepik.com/free-photo/gold-letter-g_2227-955.jpg">
     
     <script type="text/javascript" src="GoldCoffeeJS.js"></script>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ad5d4e40850394cbdf4da8bbdd046a92"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Gold Coffee</title>
 </head>
 <body>
@@ -19,12 +26,15 @@
         <div id = 'top_menu'>
             <nav id = 'menu'>
                 <ul>
-                    <li><a href = "#">메뉴</a></li>
-                    <li><a href = "#">매장소개</a></li>
-                    <li><a href = "#">주문</a></li>
-                    <li><a href = "#">문의</a></li>
+                    <li><a href = "#">MENU</a></li>
+                    <li><a href = "#">STORE</a></li>
+                    <li><a href = "#">EVENT</a></li>
+                    <li><a href = "#">ORDER</a></li>
                 </ul>
             </nav>
+        </div>
+        <div id = 'top_menu1'>
+            ▼
         </div>
     </div>
     <div id = 'main1'>
@@ -43,34 +53,47 @@
             <button type="submit">검색</button>
             </form>
         </div>
-        <div id="main_arrow">
+        <!-- <div id="main_arrow">
             <div id="left"><</div>
             <div id="right">></div>
         </div>
-        <div id="flag">● ○ ○</div>
+        <div id="flag">● ○ ○</div> -->
 
         
     </div>
-    <div id = 'order' >
-        <a href="http://127.0.0.1:5500/myweb/smartorder.html">
-            <h>SMART<br>ORDER</h>
-        </a>
-    </div>
+    
 
+    <div id = 'main3'>
+        <button type="button" id='main3btn1' class="main3btn" onclick="location.href='place.html' "><i class="fas fa-map-marked-alt"></i></button>
+        <button type="button" id='main3btn2' class="main3btn"><i class="fas fa-shopping-cart"></i></i></button>
+        <button type="button" id='main3btn3' class="main3btn"><i class="fas fa-users"></i>
+        </i></button>
+         
+    </div>
     <div id = 'main2'>
         <hr>
         <div id='main2-1'>
-            <h1>Gold Coffee 소개</h1>
+            <h1>Gold Coffee Blending Story</h1>
             <h2></h2>
         </div>       
         <div id='main2-2'>
-            <h2><img src="https://www.starbucksathome.com/kr/sites/g/files/dzyqzn2046/files/styles/featured_product_desktop/public/2019-09/4Fundamentals_ArticleHeader_Desktop_1176x712_0.jpg?itok=rrviRhCS"></h2>
+            <!-- <img src="http://www.cafedroptop.com/n/kr/images/main2020/main_card.jpg"> -->
+            <img src="https://www.starbucksathome.com/kr/sites/g/files/dzyqzn2046/files/styles/featured_product_desktop/public/2019-09/4Fundamentals_ArticleHeader_Desktop_1176x712_0.jpg?itok=rrviRhCS">
+            <span>
+                <br>
+                블렌딩이란, 각기 다른 커피 생두를 섞어<br>
+                조화로운 맛을 낼 수 있도록 원두를 조합하는 방식입니다.<br>
+                GoldCoffee에서는 사후 블렌딩 기법을 통해<br>
+                각 생두에 가장 적합한 로스팅 포인트로 로스팅 후<br>
+                원두를 혼합하는 블렌딩을 진행하여<br>
+                각 생두의 풍미와 개성미가 가장 살아있는<br>
+                사후블렌딩을 진행하였습니다.
+            </span>
+            <!-- <h2><img src="http://cafedroptop.com/n/kr/images/company/droptop_specialty.gif"></h2> -->
         </div>       
     </div>
-    <div id = 'main3'>
-        <hr>
-         
-    </div>
+    <div class="clear"></div>
+    
     <div id = 'bottom'>
         <h1 id='bottomtitle'><img id='logo' src="https://www.galanni.com.au/wp-content/uploads/2017/08/cropped-G-LOGO-1.png"><br>Gold Coffee</h1>
         <h1 id='bottomcontent'>
@@ -80,6 +103,16 @@
 주소 : 서울특별시 서대문구 충정로 70 / E-mail : CSU@kr.nestle.com <br>
 대표번호 : (TEL) Gold Coffee® by YJCompany : 080-777-7777 / (TEL) Gold Coffee® by 윤주네방구석 : 010-8915-2865<br>
         </h1>
+    </div>
+    <div id = 'order' >
+        <a href="smartorder.html">
+            SMART<br>ORDER
+        </a>
+    </div>
+    <div id = 'order1' >
+        <a href="smartorder.html">
+            SMART ORDER <i class="fas fa-shopping-bag"></i>
+        </a>
     </div>
 </body>
 </html>

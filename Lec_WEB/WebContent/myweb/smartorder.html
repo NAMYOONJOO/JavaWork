@@ -15,6 +15,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://image.freepik.com/free-photo/gold-letter-g_2227-955.jpg">
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ad5d4e40850394cbdf4da8bbdd046a92"></script>
     <title>Smart Order</title>
 </head>
 <body>
@@ -55,6 +57,7 @@
             <button id = "orderbtn1"><i class="fas fa-motorcycle"></i><br>배달주문</button>
             <button id = "orderbtn2"><i class="fas fa-shopping-bag"></i> <br>포장주문</button>
             <button id = "orderbtn3"><i class="fas fa-coffee"></i> <br>매장주문</button>
+        
         </div>
         
         <div id = 'Ordermain3'>
@@ -68,7 +71,41 @@
             </div>
         </div>
         <div id = 'Ordermain4'>
+            <br>
+            <br>
+            <br>
             <h1>제휴 할인 / 이달의 할인</h1>
+            <hr>
+            <div class="event_sale_list">
+                <ul>
+                    <li>
+                        <div><img src="https://www.pizzahut.co.kr/resources/images/white_ver/img_01_02.png" alt="kt"></div>
+                        <strong>KT 멤버십</strong>
+                        <ul class="bl_arrow">
+                            <li>- 전체금액 15%<strong>할인</strong></li>
+                            <li>- KT멤버십 15%<strong>차감</strong></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div><img src="https://www.pizzahut.co.kr/resources/images/white_ver/img_01_03.png" alt="lgu+"></div>
+                        <strong>LG U+멤버십</strong>
+                        <ul class="bl_arrow">
+                            <li>- 전체금액 15%<strong>할인</strong></li>
+                            <li>- LG U+멤버십포인트 15%<strong>차감</strong></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div><img src="https://www.pizzahut.co.kr/resources/images/white_ver/img_02_03.png" alt="lgu+"></div>
+                        <strong>OK캐쉬백</strong>
+                        <ul class="bl_arrow">
+                            <li>- 전체금액 <strong>30%할인</strong></li>
+                            <li>- OK캐쉬백 포인트 15%<strong>차감</strong></li>
+                            <li>- OK캐쉬백 2%<strong>적립</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
         </div>
     </div>  
     <!-- 주문 팝업 -->
@@ -145,11 +182,12 @@
     </div>
 
     <div id = 'orderpopup2' class="modal">
-        <div class = 'modal-content animate'>
+        <div class = 'modal-content animate' id='modal-content2'>
             <span class="close">&times;</span>
             <h1>결제 정보</h1>
+            <hr>
             <div id = orderpopup2-1>
-                <form ></form>
+                <form name='frm' action="https://www.w3schools.com/action_page.php">
                 <h2>결제수단 선택</h2>
                 <input type="radio" name ="결제수단" value="신용카드" checked> 신용카드
                 <input type="radio" name ="결제수단" value="카카오페이" onclick="return(false)"> 카카오페이
@@ -157,30 +195,43 @@
                 <!-- 현재는 신용카드결제만 가능 -->
                 <hr>
                 <h2>카드정보 입력</h2>
-                <button id="ordersubmit" type='submit'>주문완료</button>
+                <h3>카드번호</h3>
+                <input type="password" maxlength="4" id = 'cardnum1' name='cardnum'> -
+                <input type="password" maxlength="4" id = 'cardnum2' name='cardnum'> -
+                 <input type="password" maxlength="4" id = 'cardnum3' name='cardnum'> - 
+                <input type="password" maxlength="4" id = 'cardnum4' name='cardnum'>
+                <h3>유효기간</h3>
+                <input type="number" max="12" name = 'ValidityMM' placeholder=" MM" class="validity"> /
+                <input type="number" max="99" name = 'ValidityYY' placeholder=" YY" class="validity">
+                <h3>본인확인</h3>
+                <input type="number" name='birthnum' placeholder="생년월일 6자리">
+                <h3>카드비밀번호</h3>
+                <input type="number" min="00" max="99" placeholder='앞 2자리' name='pw'> ●●
+                <hr>
+                <h2>결제금액</h2>
+                <div id = 'orderprice2'>
+                    <label for="price">결제 금액</label>
+                </div>
+                <input type="number" name="price" value = '0' id = 'formprice'>
+                <input type="text" name="ordercontent" value = '' id = 'formordercontent'>
+                <hr>
+                <!-- <button id="ordersubmit" type='button'>주문완료</button> -->
+                <input type="button" value="주문완료" id="ordersubmit">
+                </form>
             </div>
             
         </div>
-
+        
     </div>
-    <!-- <div id = 'main2'>
-        <hr>
-        <div id='main2-1'>
-            <h1>MENU</h1>
-            <h1>할인해택</h1>
-        </div>       
-        <div id='main2-2'>
-            <h2><img src="https://www.starbucksathome.com/kr/sites/g/files/dzyqzn2046/files/styles/featured_product_desktop/public/2019-09/4Fundamentals_ArticleHeader_Desktop_1176x712_0.jpg?itok=rrviRhCS"></h2>
-        </div>       
-    </div> -->
+
     <div id = 'bottom' class="page2bt">
         <h1 id='bottomtitle'><img id='logo' src="https://www.galanni.com.au/wp-content/uploads/2017/08/cropped-G-LOGO-1.png"><br>Gold Coffee</h1>
         <h1 id='bottomcontent'>
             Gold Coffee®와 Gold Coffee로고는 YJCompany의 라이센스하에 사용되는 Gold Coffee Corporation의 등록 상표입니다.<br>     
-다른 모든 상표는 해당 소유자의 자산입니다.<br>
-상호명 : 코리아 아이티 H회사 / 대표자 : 남윤주 / 사업자등록번호 : 777-77-7777<br>
-주소 : 서울특별시 서대문구 충정로 70 / E-mail : CSU@kr.nestle.com <br>
-대표번호 : (TEL) Gold Coffee® by YJCompany : 080-777-7777 / (TEL) Gold Coffee® by 윤주네방구석 : 010-8915-2865<br>
+            다른 모든 상표는 해당 소유자의 자산입니다.<br>
+            상호명 : 코리아 아이티 H회사 / 대표자 : 남윤주 / 사업자등록번호 : 777-77-7777<br>
+            주소 : 서울특별시 서대문구 충정로 70 / E-mail : CSU@kr.nestle.com <br>
+            대표번호 : (TEL) Gold Coffee® by YJCompany : 080-777-7777 / (TEL) Gold Coffee® by 윤주네방구석 : 010-8915-2865<br>
         </h1>
     </div>
 

@@ -32,6 +32,32 @@ nav#menu ul{
     top: 50px;
     list-style: none;
 }
+div.event_sale_list{
+    
+    display: inline;
+    background-color: rgb(240,240,240);
+}
+.event_sale_list>ul{
+    list-style: none;
+}
+.event_sale_list>ul>li{
+    width: 33%;
+    height: 350px;
+    padding: 5%;
+    float: left;
+    background-color: rgb(240,240,240);
+    box-sizing: border-box;
+    border: 5px solid white;
+   
+}
+.event_sale_list>ul>li *{
+    width: 100%;
+}
+.event_sale_list>ul>li ul{
+    padding-left: 0px;
+    list-style: none;
+}
+
 
 nav#menu ul li {
     float: left;
@@ -53,8 +79,8 @@ nav#menu ul li a{
 div#main1{
     margin: 0px;
     width: 100%;
-    height: 900px;
-    position: absolute;
+    height: 800px;
+    /* position: absolute; */
     top: 0px;
     
 }
@@ -67,6 +93,7 @@ div#main1{
     top: 0px;
     background-size: cover;
     background-repeat: no-repeat;
+    display: block;
 }
 #content1{
     background-image: url("https://c.wallhere.com/photos/26/92/coffee_espresso_drawing_cup_foam-742133.jpg!d");
@@ -87,11 +114,12 @@ div#main1{
 }
 #content2 h1{
     font-family: 'Nanum Brush Script', cursive;
-    color: rgb(196,183,59);
+    color: rgb(220, 215, 178);
     position: absolute;
     right: 250px;
     top: 350px;
     font-size: 80px;
+    text-shadow: -1px 0 #F2F1F6, 0 1px #F2F1F6, 1px 0 #F2F1F6, 0 -1px #F2F1F6;
 }
 #content2 button{
     background-color: rgba(255, 255, 255, 0);
@@ -106,7 +134,8 @@ div#main1{
 
 }
 #content3{
-    background-image: url("https://www.successdigestonline.com/wp-content/uploads/2019/09/he-drank-47-cups-of-coffee-a-day-and-what-happened-was-beyond-amazing-768x356.jpg");
+    /* background-image: url("https://www.successdigestonline.com/wp-content/uploads/2019/09/he-drank-47-cups-of-coffee-a-day-and-what-happened-was-beyond-amazing-768x356.jpg"); */
+    background-image: url("http://t2.gstatic.com/images?q=tbn:ANd9GcQFdg3P8r2RNOHqTQCaET0eOyVnrhVlklftvdq2mV8pcaku_-7AaXnHdwiTB30bLbiJTUTqszs9FrYoZoHJFNc");
 
     text-align: center;
 }
@@ -185,59 +214,95 @@ div#main1{
 div#order{
     cursor: pointer;
     position:fixed;
-	right: 20px;
-    top: 500px;
+	right: 30px;
+    top: 300px;
     width: 150px;
     height: 150px;
     /* background-image: url('img/coffeecup.png'); */
     background-image: url("https://www.flaticon.com/premium-icon/icons/svg/2931/2931201.svg");
     background-size: contain;
+   
 
 }
-div#order h{
+div#order a{
+    text-decoration: none;
     position: relative;
-    left: 50px;
+    left: 26px;
     bottom: -150px;
-    font-size: large;
+    font-size: 30px;
     font-weight: 900;
     color: black;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px  white;
-    
-    
 }
 
 /* main2 */
 div#main2{
-    position : absolute;
-    top: 900px;
+    position : static;
+    display: block;
+    /* top: 900px; */
     color:black;
     width: 80%;
     height: 1000px;
     background-color: white;
     margin: 20px 10%;
+
 }
 div#main2 div{
-    width: 40%;
-    display: inline;
+    width: 100%;
+    display: block;
+    text-align: center;
 }
-#main2-2{
+#main2-2 img{
+    margin: 10px;
+    display: inline
 }
+#main2-2 span{
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 20px;
+  
+}
+
+/* main3 */
+#main3{
+    text-align: center;
+}
+.main3btn{
+    width: 120px;
+    height:120px;
+    border-radius: 60px;
+    border: none;
+    margin: 20px;
+    font-size: 40px;
+    color: #eeeeee;
+    box-shadow: 1px 1px 1px 1px #bbb;
+    outline: 0;
+}
+
+
+#main3btn1{background-color:  rgb(208,130,143)}
+#main3btn1:hover{background-color: rgb(200,104,121)}
+#main3btn2{background-color:  rgb(175,223,157)}
+#main3btn2:hover{background-color:  rgb(155,216,133)}
+#main3btn3{background-color:  rgb(165,211,226)}
+#main3btn3:hover{background-color: rgb(134,197,217)}
 /* bottom */
 div#bottom{
     width: 100%;
     height: 300px;
     background-color: rgb(204,153,51);
-    position: absolute;
+    /* position: absolute; */
+    display: block;
     top: 1900px;
     margin-top: 20px;
 
 }
-#bottom h1{
+#bottom h1, #bottom_page3 h1{
     font-family: 'Merriweather', serif;
     text-align: center;
     color: white;
 }
 #logo{
+    margin-top: 10px;
     width: 50px;
     height: 50px;
 }
@@ -264,7 +329,7 @@ div#top2{
     /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px  black; */
 }
 
-div#Ordermain{
+div#Ordermain ,div#placemain{
     margin-top: 150px;
     width: 80%;
     margin: 150px auto;
@@ -350,10 +415,10 @@ div.page2bt{
     display: none;
     
 }
-/* //TODO */
+
 #orderpopup2{
     display: inline;
-    /* display: none; */
+    display: none;
 }
 
 .modal-content {
@@ -400,7 +465,7 @@ div.page2bt{
 #ordermenu li:hover{
 background-color: #eeeeee;
 }
-#orderbtn{
+#orderbtn, #ordersubmit{
     width: 100%;
     background-color:rgb(236,150,120) ;
     color: #fefefe;
@@ -411,7 +476,7 @@ background-color: #eeeeee;
     margin: 20px auto;
     padding: 30px;
 }
-#orderbtn:hover{
+#orderbtn:hover, #ordersubmit:hover{
     background-color:rgb(230,115,77)
 }
 
@@ -445,14 +510,150 @@ div#orderdiv{
     font-size: 30px;
 }
 
+
 /* page2 popup2 */
-#ordersubmit{
-    background-color:rgb(236,150,120) ;
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+
+}
+#formprice{
+    display: none;
+}
+#formordercontent{
+    display: none;
+}
+
+.cardnum, .validity, .pw{
+    width: 15%;
+}
+
+#orderprice2{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/*page3*/
+#map{
+    width:100%;height:400px;
+    z-index: 0;
+    display: none;
+}
+
+input#location{
+    width: 100%;
+    height: 35px;
+    box-sizing: border-box;
+}
+button#btn_search,button#btn_search2{
+    width: 100%;
+    height: 35px;
+    border: none;
+    color: white;
+    box-sizing: border-box;
+   
+}
+.row div{
+    padding: 0px;
+    border: 2px solid white;
+    box-sizing: border-box;
+    
+}
+button#btn_search{
+    background-color: rgb(112,164,1);
+}
+button#btn_search2{
+background-color: rgb(107,103,102);
+}
+table i{
+    color: rgb(129,22,22);
+}
+#storelist{
+    width: 100%;
+  
+}
+#storelist h2,#storelist h3{
+    font-size: 15px;
+}
+
+#storelist button{
+    background-color: rgb(112,164,1);
     color: white;
     border: none;
-    border-radius: 5px;
-    padding: 20px;
-    font-size: larger;
-    font-weight: 600;
-    width: 20%;
+    float: right;
+    margin-top: 2px;
+    
 }
+#storelist td{
+    border-top: 0.5px solid #444;
+    padding: 5px 0;
+}
+#bottom_page3{
+    width: 100%;
+    height: 300px;
+    background-color: rgb(204,153,51);
+    margin-top: 20px;
+}
+#placemain{
+    min-height: 600px;
+}
+
+#order1{
+    margin-left: 10%;
+    margin-right: 10%;
+    position: fixed;
+    bottom: 0px;
+    width: 80%;
+    height: 80px;
+    text-align: center;
+    background-color:white ;
+    font-weight: 800;
+    font-size: 30px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+    padding-top: 10px;
+    border: 0.5px solid #888;
+}
+
+#order1 a{
+    text-decoration: none;
+    color: #888;
+}
+#order1 a:hover{
+    color: #333;
+}
+
+@media only screen and (max-width: 900px) {
+    div#top_menu{
+      display: none;
+    }
+    div#order{
+        display: none;
+    }
+    div#top_menu1{
+        display: block;
+      }
+      div#order1{
+          display: block;
+      }
+   
+ 
+  }
+
+  @media only screen and (min-width: 900px) {
+    div#top_menu{
+      display: block;
+    }
+    div#order{
+        display: block;
+    }
+    div#top_menu1{
+        display: none;
+      }
+      div#order1{
+          display: none;
+      }
+ 
+  }
