@@ -170,7 +170,7 @@
 	
 	
 	
-		<Context docBase="JSP19_AJAX" path="/JSP19_AJAX" reloadable="true" source="org.eclipse.jst.jee.server:JSP19_AJAX"/><Context docBase="JSP05_ServletForm" path="/JSP05_ServletForm" reloadable="true" source="org.eclipse.jst.jee.server:JSP05_ServletForm"/><Context docBase="JSP21_EL" path="/JSP21_EL" reloadable="true" source="org.eclipse.jst.jee.server:JSP21_EL"/><Context docBase="JSP08_TagDirective" path="/JSP08_TagDirective" reloadable="true" source="org.eclipse.jst.jee.server:JSP08_TagDirective"/></Host>
+		<Context docBase="JSP19_AJAX" path="/JSP19_AJAX" reloadable="true" source="org.eclipse.jst.jee.server:JSP19_AJAX"/></Host>
     </Engine>
   </Service>
 </Server><!-- 
