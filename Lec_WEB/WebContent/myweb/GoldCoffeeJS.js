@@ -134,7 +134,8 @@ $(document).ready(function(){
     function addmenulist(){
         orderlist+=$(this).text()+"<br>"
         menucount++;
-        price += $(this).val()
+        price += $(this).va
+        l()
         $('#orderlist').html(orderlist)
         $('#orderprice').text("총 "+menucount+"잔 "+price+" 원 ")
         $('#orderprice2').text(price+" 원")

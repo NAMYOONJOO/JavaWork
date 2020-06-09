@@ -3,7 +3,7 @@
 
 DROP TABLE test_write CASCADE CONSTRAINTS;
 
-
+SELECT * FROM TEST_WRITE ORDER BY WR_UID DESC ;
 
 
 /* Create Tables */

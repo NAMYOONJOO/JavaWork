@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<script>
+
+$(document).ready(function(){
+	$("#btn_load").click(function(){
+		
+		// JSON
+		var url = "http://localhost:8082/JSP19_AJAX/list.ajax?"
+
+		$.ajax({
+			url : url,
+			type : "GET",
+			cache : false,
+			success : function(data,status){
+				if(status=="success") parseJSON(data);
+			} 
+		 })
+		// TODO
+		
+	 });
+	
+	});
+	 
+function parseJSON(jsonObj){
+	var row = jsonObj.data;
+	var table = "<tr><th>id</th><th>작성자</th><th>글제목</th><th>글내용</th><th>조회수</th><th>작성일</th></tr>"
+
+
+	var i;
+
+	for (i = 0; i < row.length; i++) {
+		table += "<tr>";
+		table += "<td>" + row[i].uid + "</td>";
+		table += "<td>" + row[i].name + "</td>";
+		table += "<td>" + row[i].subject + "</td>";
+		table += "<td>" + row[i].content + "</td>";
+		table += "<td>" + row[i].viewcnt + "</td>";
+		table += "<td>" + row[i].regdate + "</td>";
+		table += "</tr>";
+	}
+	$("#demoJSON").html(table);
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

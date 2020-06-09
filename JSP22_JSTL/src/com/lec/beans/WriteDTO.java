@@ -23,7 +23,7 @@ public class WriteDTO {
 	
 	public WriteDTO() {
 		super();
-		System.out.println("WriteDTO() 객체 생성");
+		//System.out.println("WriteDTO() 객체 생성");
 	}
 	
 	
@@ -34,78 +34,78 @@ public class WriteDTO {
 		this.content = content;
 		this.name = name;
 		this.viewCnt = viewCnt;
-		System.out.println("WriteDTO(uid, subject, content, name, viewCnt)객체 생성");
+		//System.out.println("WriteDTO(uid, subject, content, name, viewCnt)객체 생성");
 	}
 
 
 	public int getUid() {
-		System.out.println("getUid 호출");
+		//System.out.println("getUid 호출");
 		return uid;
 	}
 
 
 	public void setUid(int uid) {
-		System.out.println("setUid("+uid+" )호출");
+		//System.out.println("setUid("+uid+" )호출");
 		this.uid = uid;
 	}
 
 
 	public String getSubject() {
-		System.out.println("getSubject 호출");
+		//System.out.println("getSubject 호출");
 		return subject;
 	}
 
 
 	public void setSubject(String subject) {
-		System.out.println("setSubject("+subject+" )호출");
+		//System.out.println("setSubject("+subject+" )호출");
 		this.subject = subject;
 	}
 
 
 	public String getContent() {
-		System.out.println("getContent 호출");
+		//System.out.println("getContent 호출");
 		return content;
 	}
 
 
 	public void setContent(String content) {
-		System.out.println("setContent("+content+" )호출");
+		//System.out.println("setContent("+content+" )호출");
 		this.content = content;
 	}
 
 
 	public String getName() {
-		System.out.println("getName 호출");
+		//System.out.println("getName 호출");
 		return name;
 	}
 
 
 	public void setName(String name) {
-		System.out.println("setName("+name+") 호출");
+		//System.out.println("setName("+name+") 호출");
 		this.name = name;
 	}
 
 
 	public int getViewCnt() {
-		System.out.println("getVeiwCnt 호출");
+		//System.out.println("getVeiwCnt 호출");
 		return viewCnt;
 	}
 
 
 	public void setViewCnt(int viewCnt) {
-		System.out.println("setViewCnt("+viewCnt+") 호출");
+		//System.out.println("setViewCnt("+viewCnt+") 호출");
 		this.viewCnt = viewCnt;
 	}
 
 
 	public String getRegDate() {
-		System.out.println("getRegDate 호출");
+		//System.out.println("getRegDate 호출");
 		return regDate;
 	}
 
 
 	public void setRegDate(String regDate) {
-		System.out.println("setRegDate("+regDate+") 호출");
+		//System.out.println("setRegDate("+regDate+") 호출");
 		this.regDate = regDate;
 	}
 
