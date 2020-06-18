@@ -610,9 +610,21 @@ CREATE TABLE Pimage
 );
 CREATE SEQUENCE SEQ_Pimage INCREMENT BY 1 START WITH 1;
 SELECT COUNT(PFPID) FROM Pimage WHERE PFPID =1;
+SELECT *FROM PIMAGE ;
+
 DROP TABLE Pimage;
-SELECT *FROM PIMAGE WHERE PFPID =1;
+CREATE TABLE Pimage
+(
+	pfuid number NOT NULL,
+	pfsource varchar2(200) NOT NULL,
+	pffile varchar2(200) NOT NULL,
+	pfpid number NOT NULL,
+	PRIMARY KEY (pfuid)
+);
+
 
 DROP SEQUENCE pfile_seq;
 CREATE SEQUENCE pfile_seq;
 INSERT INTO PIMAGE VALUES (pfile_seq.nextval,'dd','dd',1);
+
+SELECT * FROM PRODUCT ;

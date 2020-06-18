@@ -1,0 +1,444 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>상품문의사항</title>
+		<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+	</head>
+<script>
+function asd() {
+	parent.document.title="상품문의사항";
+}
+</script>
+
+	<body onload="asd();">
+
+		<!-- ========== START OF NAVBAR ========== -->
+		<table border="0" width="100%" cellpadding="1" cellspacing="0">
+			<tr>
+				<td colspan="3" class="NavBarCell1">
+					<table border="0" cellpadding="0" cellspacing="3">
+						<tr align="center" valign="top">
+							<td class="NavBarCell1">
+								<a href="../overview-summary.html">개요</a>&nbsp;
+							</td>
+							<td class="NavBarCell1">
+								<a href="package-summary.html">개체 유형</a>&nbsp;
+							</td>
+							<td class="NavBarCell1Rev"> &nbsp;
+								테이블&nbsp;
+							</td>
+							<td class="NavBarCell1">
+								<a href="../help-doc.html">도움말</a>&nbsp;
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="NavBarCell2">
+					&nbsp;<a HREF="3.html" ><b>이전테이블</b></a>&nbsp;&nbsp;
+					&nbsp;<a HREF="5.html" ><b>다음테이블</b></a>&nbsp;&nbsp;
+				</td>
+				<td class="NavBarCell2">
+					<a href="../index.html" target="_top">프레임</a>
+					&nbsp;&nbsp;&nbsp;
+					<a href="4.html" target="_top">프레임 없음</a>
+					&nbsp;&nbsp;&nbsp;
+					<script>
+					<!--
+						if(window==top) {
+							document.writeln('<a href="../allclasses.html" target="">모든 개체</a>');
+						}
+					//-->
+					</script>
+					<noscript>
+						<a href="../allclasses.html" target="">모든 개체</a>
+					</noscript>
+				</td>
+			</tr>
+		</table>
+		<!-- =========== END OF NAVBAR =========== -->
+
+		<hr>
+		<a name="main"></a>
+		<h2>테이블   상품문의사항</h2>
+		<hr>
+
+
+<dl>
+	<dt><b>물리명:</b></dt>
+		<dd>PQuestion<br><br></dd>
+</dl>
+
+<dl>
+	<dt><b>제약:</b></dt>
+		<dd><br><br></dd>
+</dl>
+
+<pre style="font-size:1em;">
+
+</pre>
+
+<p>
+
+<!-- ======== Attribute ======== -->
+
+<a name="attribute_summary"></a>
+
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="7">속성 개요</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th>PK</th>
+		<th>FK</th>
+		<th>논리명</th>
+		<th>물리명</th>
+		<th>형식</th>
+		<th>UNIQUE</th>
+		<th>NOT NULL</th>
+	</tr>
+	<tr>
+	<tr>
+	<td align="center"><img src="../image/icons/pkey.gif">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#118">문의사항 id</a>&nbsp;</td>
+	<td>PQid&nbsp;</td>
+	<td>number&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center"><img src="../image/icons/foreign_key.gif">&nbsp;</td>
+	<td><a href="#119">문의사항 상품 번호</a>&nbsp;</td>
+	<td>PQpid&nbsp;</td>
+	<td>number&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#120">문의사항 작성자 (사용자 ID)</a>&nbsp;</td>
+	<td>PQuid&nbsp;</td>
+	<td>varchar2(20)&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#121">문의사항 작성일자</a>&nbsp;</td>
+	<td>PQregdate&nbsp;</td>
+	<td>date&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#122">문의사항 내용</a>&nbsp;</td>
+	<td>PQcontent&nbsp;</td>
+	<td>clob&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#123">문의사항 답변</a>&nbsp;</td>
+	<td>PQanswer&nbsp;</td>
+	<td>clob&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+</tr>
+
+	</tr>
+</table>
+
+<p>
+
+<!-- ========== FOREIGN KEY =========== -->
+
+<a name="foreign_key"><!-- --></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="7">외부 키</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th width="12">속성</th>
+		<th width="28%">참조 테이블</th>
+		<th width="12%">참조 키</th>
+		<th width="12%">ON UPDATE</th>
+		<th width="12%">ON DELETE</th>
+		<th width="12%">부모의 다중성</th>
+		<th width="12%">자식의 다중성</th>
+	</tr>
+	<tr>
+	<td><a href="#119">문의사항 상품 번호&nbsp;</a></td>
+	<td><a href="../table/5.html">상품&nbsp;</a></td>
+	<td><a href="../table/5.html#117">상품 번호&nbsp;</a></td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">1&nbsp;</td>
+	<td align="center">1..n&nbsp;</td>
+</tr>
+
+</table>
+
+<p>
+
+<!-- ========== REFERENCE KEY =========== -->
+
+<a name="reference_key"><!-- --></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="7">참조 키</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th width="12">속성</th>
+		<th width="28%">테이블</th>
+		<th width="12%">외부 키</th>
+		<th width="12%">ON UPDATE</th>
+		<th width="12%">ON DELETE</th>
+		<th width="12%">부모의 다중성</th>
+		<th width="12%">자식의 다중성</th>
+	</tr>
+	
+</table>
+
+<p>
+
+<!-- ========== Complex Unique Key =========== -->
+
+<a name="complex_unique_key"><!-- --></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="1">복합 고유 키</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th>&nbsp;</th>
+		
+	</tr>
+	
+</table>
+
+
+
+<p>
+
+<!-- ========== INDEX SUMMARY =========== -->
+
+<a name="index_summary"><!-- --></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="3">인덱스 개요</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th>인덱스명</th>
+		<th>유형</th>
+		<th>UNIQUE</th>
+	</tr>
+	
+</table>
+
+<p>
+
+
+
+
+
+<p>
+
+<!-- ============ ATTRIBUTE DETAIL =========== -->
+
+<a name="attribute_detail"></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th>속성 상세</th>
+	</tr>
+</table>
+
+<a name="118"></a>
+<h3><img src="../image/icons/pkey.gif">  문의사항 id</h3>
+
+<dl>
+	<dd>PQid
+	<p>
+	<dd><pre></pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>형식 : </b>number<br></dt>
+		<dt><b>AUTO INCREMENT : </b>TRUE<br></dt>
+		<dt><b>기본값 : </b><br></dt>
+		<dt><b>제약 : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="119"></a>
+<h3> <img src="../image/icons/foreign_key.gif"> 문의사항 상품 번호</h3>
+
+<dl>
+	<dd>PQpid
+	<p>
+	<dd><pre></pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>형식 : </b>number<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>기본값 : </b><br></dt>
+		<dt><b>제약 : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="120"></a>
+<h3>  문의사항 작성자 (사용자 ID)</h3>
+
+<dl>
+	<dd>PQuid
+	<p>
+	<dd><pre>사용자 아이디입니다.</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>형식 : </b>varchar2(20)<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>기본값 : </b><br></dt>
+		<dt><b>제약 : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="121"></a>
+<h3>  문의사항 작성일자</h3>
+
+<dl>
+	<dd>PQregdate
+	<p>
+	<dd><pre></pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>형식 : </b>date<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>기본값 : </b><br></dt>
+		<dt><b>제약 : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="122"></a>
+<h3>  문의사항 내용</h3>
+
+<dl>
+	<dd>PQcontent
+	<p>
+	<dd><pre></pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>형식 : </b>clob<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>기본값 : </b><br></dt>
+		<dt><b>제약 : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="123"></a>
+<h3>  문의사항 답변</h3>
+
+<dl>
+	<dd>PQanswer
+	<p>
+	<dd><pre></pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>FALSE<br></dt>
+		<dt><b>형식 : </b>clob<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>기본값 : </b><br></dt>
+		<dt><b>제약 : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+
+
+
+
+		<!-- ========== START OF NAVBAR ========== -->
+		<table border="0" width="100%" cellpadding="1" cellspacing="0">
+			<tr>
+				<td colspan="3" class="NavBarCell1">
+					<table border="0" cellpadding="0" cellspacing="3">
+						<tr align="center" valign="top">
+							<td class="NavBarCell1">
+								<a href="../overview-summary.html">개요</a>&nbsp;
+							</td>
+							<td class="NavBarCell1">
+								<a href="package-summary.html">개체 유형</a>&nbsp;
+							</td>
+							<td class="NavBarCell1Rev"> &nbsp;
+								테이블&nbsp;
+							</td>
+							<td class="NavBarCell1">
+								<a href="../help-doc.html">도움말</a>&nbsp;
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="NavBarCell2">
+					&nbsp;<a HREF="3.html" ><b>이전테이블</b></a>&nbsp;&nbsp;
+					&nbsp;<a HREF="5.html" ><b>다음테이블</b></a>&nbsp;&nbsp;
+				</td>
+				<td class="NavBarCell2">
+					<a href="../index.html" target="_top">프레임</a>
+					&nbsp;&nbsp;&nbsp;
+					<a href="4.html" target="_top">프레임 없음</a>
+					&nbsp;&nbsp;&nbsp;
+					<script>
+					<!--
+						if(window==top) {
+							document.writeln('<a href="../allclasses.html" target="">모든 개체</a>');
+						}
+					//-->
+					</script>
+					<noscript>
+						<a href="../allclasses.html" target="">모든 개체</a>
+					</noscript>
+				</td>
+			</tr>
+		</table>
+		<!-- =========== END OF NAVBAR =========== -->
+
+		<hr>
+
+	</body>
+</HTML>

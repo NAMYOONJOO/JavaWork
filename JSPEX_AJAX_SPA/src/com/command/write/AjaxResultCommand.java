@@ -12,30 +12,42 @@ import com.lec.beans.AjaxWriteResult;
 public class AjaxResultCommand implements Command {
 
 	@Override
-	public void excute(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		AjaxWriteResult result = new AjaxWriteResult();
 		
 		result.setStatus((String)request.getAttribute("status"));
 		result.setMessage((String)request.getAttribute("message"));
-		result.setCount((Integer) request.getAttribute("result"));
-		
-		
+		result.setCount((Integer)request.getAttribute("result"));		
 		
 		
 		ObjectMapper mapper = new ObjectMapper();
+		
 		try {
 			String jsonString = mapper.writerWithDefaultPrettyPrinter()
-					.writeValueAsString(result);
+								.writeValueAsString(result);
 			
-			response.setContentType("application/json; charset=utf-8");
-			response.getWriter().write(jsonString);
-		}catch (JsonProcessingException e) {
+			response.setContentType("application/json; charset=utf-8"); 
+			response.getWriter().write(jsonString);			
+		} catch(JsonProcessingException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+		
+		
+		
+	} // end execute()
 
-}
+} // end Command
+
+
+
+
+
+
+
+
+
+
+
+

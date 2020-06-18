@@ -650,7 +650,7 @@ SELECT *FROM PRODUCT ;
 --Question--
 DROP TABLE PQuestion CASCADE CONSTRAINTS;
 DROP SEQUENCE SEQ_PQuestion_PQid;
-CREATE SEQUENCE SEQ_PQuestion_PQid INCREMENT BY 1 START WITH 1;
+CREATE SEQUENCE SEQ_PQuestion_PQid;
 
 CREATE TABLE PQuestion
 (
@@ -715,3 +715,7 @@ INSERT INTO PQUESTION VALUES (pquestion_seq.nextval,1,'bhd4445',sysdate,'hi',' '
 
 SELECT * FROM "MEMBER" ;
 INSERT INTO "MEMBER"  VALUES ('admin','admin','관리자','000000','0000000','bhd4445@naver.com','yes','010-0000-0000','0325542865','dd','dd','dd',1,sysdate);--관리자생성
+
+
+SELECT * FROM PIMAGE;
+DROP TABLE PIMAGE ;

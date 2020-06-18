@@ -1,0 +1,464 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>상품</title>
+		<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+	</head>
+<script>
+function asd() {
+	parent.document.title="상품";
+}
+</script>
+
+	<body onload="asd();">
+
+		<!-- ========== START OF NAVBAR ========== -->
+		<table border="0" width="100%" cellpadding="1" cellspacing="0">
+			<tr>
+				<td colspan="3" class="NavBarCell1">
+					<table border="0" cellpadding="0" cellspacing="3">
+						<tr align="center" valign="top">
+							<td class="NavBarCell1">
+								<a href="../overview-summary.html">개요</a>&nbsp;
+							</td>
+							<td class="NavBarCell1">
+								<a href="package-summary.html">개체 유형</a>&nbsp;
+							</td>
+							<td class="NavBarCell1Rev"> &nbsp;
+								테이블&nbsp;
+							</td>
+							<td class="NavBarCell1">
+								<a href="../help-doc.html">도움말</a>&nbsp;
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="NavBarCell2">
+					&nbsp;<a HREF="4.html" ><b>이전테이블</b></a>&nbsp;&nbsp;
+					&nbsp;<a HREF="6.html" ><b>다음테이블</b></a>&nbsp;&nbsp;
+				</td>
+				<td class="NavBarCell2">
+					<a href="../index.html" target="_top">프레임</a>
+					&nbsp;&nbsp;&nbsp;
+					<a href="5.html" target="_top">프레임 없음</a>
+					&nbsp;&nbsp;&nbsp;
+					<script>
+					<!--
+						if(window==top) {
+							document.writeln('<a href="../allclasses.html" target="">모든 개체</a>');
+						}
+					//-->
+					</script>
+					<noscript>
+						<a href="../allclasses.html" target="">모든 개체</a>
+					</noscript>
+				</td>
+			</tr>
+		</table>
+		<!-- =========== END OF NAVBAR =========== -->
+
+		<hr>
+		<a name="main"></a>
+		<h2>테이블   상품</h2>
+		<hr>
+
+
+<dl>
+	<dt><b>물리명:</b></dt>
+		<dd>Product<br><br></dd>
+</dl>
+
+<dl>
+	<dt><b>제약:</b></dt>
+		<dd><br><br></dd>
+</dl>
+
+<pre style="font-size:1em;">
+
+</pre>
+
+<p>
+
+<!-- ======== Attribute ======== -->
+
+<a name="attribute_summary"></a>
+
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="7">속성 개요</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th>PK</th>
+		<th>FK</th>
+		<th>논리명</th>
+		<th>물리명</th>
+		<th>형식</th>
+		<th>UNIQUE</th>
+		<th>NOT NULL</th>
+	</tr>
+	<tr>
+	<tr>
+	<td align="center"><img src="../image/icons/pkey.gif">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#117">상품 번호</a>&nbsp;</td>
+	<td>Pid&nbsp;</td>
+	<td>number&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#124">상품 이름</a>&nbsp;</td>
+	<td>Pname&nbsp;</td>
+	<td>varchar2(100)&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#125">상품 가격</a>&nbsp;</td>
+	<td>Pprice&nbsp;</td>
+	<td>number&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#126">상품 브랜드</a>&nbsp;</td>
+	<td>Pbrand&nbsp;</td>
+	<td>varchar2(100)&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#127">상품 이미지</a>&nbsp;</td>
+	<td>Pimage&nbsp;</td>
+	<td>varchar2(1000)&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+</tr>
+<tr>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td><a href="#128">상품 카테코리 코드</a>&nbsp;</td>
+	<td>Pcode&nbsp;</td>
+	<td>number&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">NOT NULL&nbsp;</td>
+</tr>
+
+	</tr>
+</table>
+
+<p>
+
+<!-- ========== FOREIGN KEY =========== -->
+
+<a name="foreign_key"><!-- --></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="7">외부 키</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th width="12">속성</th>
+		<th width="28%">참조 테이블</th>
+		<th width="12%">참조 키</th>
+		<th width="12%">ON UPDATE</th>
+		<th width="12%">ON DELETE</th>
+		<th width="12%">부모의 다중성</th>
+		<th width="12%">자식의 다중성</th>
+	</tr>
+	
+</table>
+
+<p>
+
+<!-- ========== REFERENCE KEY =========== -->
+
+<a name="reference_key"><!-- --></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="7">참조 키</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th width="12">속성</th>
+		<th width="28%">테이블</th>
+		<th width="12%">외부 키</th>
+		<th width="12%">ON UPDATE</th>
+		<th width="12%">ON DELETE</th>
+		<th width="12%">부모의 다중성</th>
+		<th width="12%">자식의 다중성</th>
+	</tr>
+	<tr>
+	<td><a href="#117">상품 번호&nbsp;</a></td>
+	<td><a href="../table/3.html">상품 이미지&nbsp;</a></td>
+	<td><a href="../table/3.html#116">상품 이미지 상품id&nbsp;</a></td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">1&nbsp;</td>
+	<td align="center">1..n&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="#117">상품 번호&nbsp;</a></td>
+	<td><a href="../table/4.html">상품문의사항&nbsp;</a></td>
+	<td><a href="../table/4.html#119">문의사항 상품 번호&nbsp;</a></td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">1&nbsp;</td>
+	<td align="center">1..n&nbsp;</td>
+</tr>
+<tr>
+	<td><a href="#117">상품 번호&nbsp;</a></td>
+	<td><a href="../table/6.html">구매&nbsp;</a></td>
+	<td><a href="../table/6.html#129">구매 상품 번호&nbsp;</a></td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">RESTRICT&nbsp;</td>
+	<td align="center">1&nbsp;</td>
+	<td align="center">1..n&nbsp;</td>
+</tr>
+
+</table>
+
+<p>
+
+<!-- ========== Complex Unique Key =========== -->
+
+<a name="complex_unique_key"><!-- --></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="1">복합 고유 키</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th>&nbsp;</th>
+		
+	</tr>
+	
+</table>
+
+
+
+<p>
+
+<!-- ========== INDEX SUMMARY =========== -->
+
+<a name="index_summary"><!-- --></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th colspan="3">인덱스 개요</th>
+	</tr>
+	<tr class="TableSubHeadingColor">
+		<th>인덱스명</th>
+		<th>유형</th>
+		<th>UNIQUE</th>
+	</tr>
+	
+</table>
+
+<p>
+
+
+
+
+
+<p>
+
+<!-- ============ ATTRIBUTE DETAIL =========== -->
+
+<a name="attribute_detail"></a>
+<table border="1" cellpadding="3" cellspacing="0" width="100%" class="AttributeTable">
+	<tr class="TableHeadingColor">
+		<th>속성 상세</th>
+	</tr>
+</table>
+
+<a name="117"></a>
+<h3><img src="../image/icons/pkey.gif">  상품 번호</h3>
+
+<dl>
+	<dd>Pid
+	<p>
+	<dd><pre></pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>형식 : </b>number<br></dt>
+		<dt><b>AUTO INCREMENT : </b>TRUE<br></dt>
+		<dt><b>기본값 : </b><br></dt>
+		<dt><b>제약 : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="124"></a>
+<h3>  상품 이름</h3>
+
+<dl>
+	<dd>Pname
+	<p>
+	<dd><pre></pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>형식 : </b>varchar2(100)<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>기본값 : </b><br></dt>
+		<dt><b>제약 : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="125"></a>
+<h3>  상품 가격</h3>
+
+<dl>
+	<dd>Pprice
+	<p>
+	<dd><pre></pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>형식 : </b>number<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>기본값 : </b>0<br></dt>
+		<dt><b>제약 : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="126"></a>
+<h3>  상품 브랜드</h3>
+
+<dl>
+	<dd>Pbrand
+	<p>
+	<dd><pre></pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>FALSE<br></dt>
+		<dt><b>형식 : </b>varchar2(100)<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>기본값 : </b><br></dt>
+		<dt><b>제약 : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="127"></a>
+<h3>  상품 이미지</h3>
+
+<dl>
+	<dd>Pimage
+	<p>
+	<dd><pre>이미지 url
+</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>FALSE<br></dt>
+		<dt><b>형식 : </b>varchar2(1000)<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>기본값 : </b><br></dt>
+		<dt><b>제약 : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+<a name="128"></a>
+<h3>  상품 카테코리 코드</h3>
+
+<dl>
+	<dd>Pcode
+	<p>
+	<dd><pre>상품 카테코리 코드
+</pre>
+	<p>
+	<dl>
+		<dt><b>UNIQUE : </b>FALSE<br></dt>
+		<dt><b>NOT NULL : </b>TRUE<br></dt>
+		<dt><b>형식 : </b>number<br></dt>
+		<dt><b>AUTO INCREMENT : </b>FALSE<br></dt>
+		<dt><b>기본값 : </b><br></dt>
+		<dt><b>제약 : </b><br></dt>
+	</dl>
+</dl>
+
+<p>
+
+<hr>
+
+
+
+
+		<!-- ========== START OF NAVBAR ========== -->
+		<table border="0" width="100%" cellpadding="1" cellspacing="0">
+			<tr>
+				<td colspan="3" class="NavBarCell1">
+					<table border="0" cellpadding="0" cellspacing="3">
+						<tr align="center" valign="top">
+							<td class="NavBarCell1">
+								<a href="../overview-summary.html">개요</a>&nbsp;
+							</td>
+							<td class="NavBarCell1">
+								<a href="package-summary.html">개체 유형</a>&nbsp;
+							</td>
+							<td class="NavBarCell1Rev"> &nbsp;
+								테이블&nbsp;
+							</td>
+							<td class="NavBarCell1">
+								<a href="../help-doc.html">도움말</a>&nbsp;
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="NavBarCell2">
+					&nbsp;<a HREF="4.html" ><b>이전테이블</b></a>&nbsp;&nbsp;
+					&nbsp;<a HREF="6.html" ><b>다음테이블</b></a>&nbsp;&nbsp;
+				</td>
+				<td class="NavBarCell2">
+					<a href="../index.html" target="_top">프레임</a>
+					&nbsp;&nbsp;&nbsp;
+					<a href="5.html" target="_top">프레임 없음</a>
+					&nbsp;&nbsp;&nbsp;
+					<script>
+					<!--
+						if(window==top) {
+							document.writeln('<a href="../allclasses.html" target="">모든 개체</a>');
+						}
+					//-->
+					</script>
+					<noscript>
+						<a href="../allclasses.html" target="">모든 개체</a>
+					</noscript>
+				</td>
+			</tr>
+		</table>
+		<!-- =========== END OF NAVBAR =========== -->
+
+		<hr>
+
+	</body>
+</HTML>

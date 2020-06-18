@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 기본 생성자 -->
+	<bean id="myScore1" class="com.lec.spring.Score" />
+
+	<!-- 매개변수 지정 constructor-arg -->
+	<bean id="myScore2" class="com.lec.spring.Score">
+		<!-- 생성자 매개변수 4개이고 아래 순서대로 생성자에 입력됨 -->
+		<constructor-arg value="88" />
+		<constructor-arg value="70" />
+		<!-- <constructor-arg value="91"/> -->
+
+		<constructor-arg>
+			<value>91</value> <!-- value 태그로 값 명시 가능 -->
+		</constructor-arg>
+
+		<constructor-arg value="좋아요" />
+
+	</bean>
+
+	<!-- 매개변수 지정, index 사용 -->
+	<bean id="myScore3" class="com.lec.spring.Score">
+		<constructor-arg index="2" value="91" />
+		<constructor-arg index="1" value="70" />
+		<constructor-arg index="0" value="88" />
+		<constructor-arg index="3">
+			<value>그저 그래요</value>
+		</constructor-arg>
+	</bean>
+
+	<!-- 매개변수 type 사용 -->
+	<bean id="myScore4" class="com.lec.spring.Score">
+		<constructor-arg type="int" value="88" />
+		<constructor-arg type="int" value="70" />
+		<constructor-arg type="java.lang.String" value="나빠요" />
+		<constructor-arg type="int" value="91" />
+
+		<!-- 불가능 : 자동형변환 적용 안됨 <constructor-arg type="int" value="88"/> <constructor-arg 
+			type="byte" value="70"/> <constructor-arg type="java.lang.String" value="나빠요"/> 
+			<constructor-arg type="short" value="91"/> -->
+	</bean>
+
+	<!-- 배열타입 매개변수 생성자 -->
+	<bean id="myScore5" class="com.lec.spring.Score">
+		<constructor-arg>
+			<list>
+				<value>88</value>
+				<value>70</value>
+				<value>91</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<!-- setter 메소드 사용 -->
+	<bean id="myScore6" class="com.lec.spring.Score">
+		<!-- 일단은 기본생성자로 생성! -->
+
+		<property name="kor" value="88" />
+		<!-- myScore6.setKor(88) -->
+		<property name="eng" value="70" />
+		<!-- <property name="math" value="91"/> -->
+		<property name="math">
+			<value>91</value>
+		</property>
+		<property name="comment" value="끝내줌!" />
+
+	</bean>
+
+	<!-- 생성자와 setter동시에 가능 생성자 먼저 호출되고 , setter수행됨 -->
+	<bean id="myScore7" class="com.lec.spring.Score">
+		<constructor-arg value="88" />
+		<property name="comment" value="꿈만같다" />
+		<constructor-arg value="70" />
+		<constructor-arg value="91" />
+		<constructor-arg value="악몽이다" />
+	</bean>
+
+	<bean id="myScore8" class="com.lec.spring.Score">
+		<property name="score">
+			<list>
+				<value>100</value>
+				<value>200</value>
+				<value>300</value>
+			</list>
+		</property>
+	</bean>
+
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
