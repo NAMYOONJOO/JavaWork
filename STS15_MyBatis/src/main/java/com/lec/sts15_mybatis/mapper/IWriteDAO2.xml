@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lec.sts15_mybatis.board.beans.IWriteDAO">
+
+	<insert id="insert" flushCache="true"
+		parameterType="com.lec.sts15_mybatis.board.beans.BWriteDTO"
+		keyProperty="uid" useGeneratedKeys="true" keyColumn="wr_uid">
+		INSERT INTO test_write
+			(wr_uid, wr_subject, wr_content, wr_name)
+		VALUES
+			(test_write_seq.nextval, #{subject}, #{content}, #{name})	
+	</insert>
+ 
+<!-- 	<insert id="insert" flushCache="true">
+		INSERT INTO test_write
+		
+			(wr_uid, wr_subject, wr_content, wr_name)
+		VALUES
+			(test_write_seq.nextval, #{param1}, #{param2}, #{param3})		
+	</insert> -->
+	<update id="update" flushCache="true">
+		UPDATE test_write SET wr_subject = #{param1}, wr_content = #{param2} WHERE wr_uid =#{param3}	
+	</update>
+	<update id="incViewCnt" flushCache="true">
+		UPDATE test_write SET wr_viewcnt = wr_viewcnt + 1 WHERE wr_uid = #{param1}	
+	</update>
+	<delete id="deleteByUid" flushCache="true">
+		DELETE FROM test_write WHERE wr_uid = #{param1}	
+	</delete>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

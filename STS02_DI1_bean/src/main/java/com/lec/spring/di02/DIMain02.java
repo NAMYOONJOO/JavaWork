@@ -20,7 +20,6 @@ public class DIMain02 {
 		//스프링 설정파일 resource 명시
 		String configLocation = "classpath:appCtx.xml";
 		
-		
 		//ApplicationContext 객체를 만드는 시점에서bean 객체가 생성된다.
 	     AbstractApplicationContext ctx = 
 	              new GenericXmlApplicationContext(configLocation);

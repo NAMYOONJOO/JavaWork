@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	<!-- singleton scope (디폴트) 컨테이너 생성 시점에서 생성됨 컨테이너 안에 하나의 인스턴스만 생성 : 아무리 getBean()으로 
+		여러번 가져와도 동일객체 -->
+	<bean id="score1" class="com.lec.beans.Score" c:kor="55"
+		c:eng="66" c:math="23" c:comment="김우경 구려요" scope="singleton" />
+
+	<!-- prototype scope 컨테이너 생성시점에서는 생성되지 않음 getBean() 할때마다 새로운 인스턴스로 생성 -->
+	<bean id="score2" class="com.lec.beans.Score" c:kor="100"
+		c:eng="80" c:math="90" c:comment="잘해써용" scope="prototype" />
+</beans>

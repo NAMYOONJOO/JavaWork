@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--기본생성자로 생성
+	construtor-arg나 property 사용 안했음에 주목-->
+	<bean id="adminConnection"
+		class="com.lec.spring.environment.AdminConnection" />
+</beans>
