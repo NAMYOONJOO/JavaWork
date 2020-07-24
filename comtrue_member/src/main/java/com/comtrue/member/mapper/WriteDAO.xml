@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.comtrue.member.bean.WriteDAO">
+
+	<select id="select"
+		resultType="com.comtrue.member.bean.WriteDTO">
+		SELECT *FROM C_member ORDER BY name ASC
+	</select>
+
+	<select id="selectByMid"
+		resultType="com.comtrue.member.bean.WriteDTO">
+		SELECT
+		*
+		FROM
+		C_member
+		WHERE
+		memberId=#{memberId}
+	</select>
+
+	<insert id="insert" flushCache="true"
+		parameterType="com.comtrue.member.bean.WriteDTO"
+		keyProperty="memberId" useGeneratedKeys="true" keyColumn="memberId">
+		INSERT INTO
+		C_MEMBER VALUES (#{memberId},#{name},#{phoneNum},#{position},#{email})
+	</insert>
+
+	<update id="update" flushCache="true"
+	parameterType="com.comtrue.member.bean.WriteDTO">
+		UPDATE C_MEMBER SET 
+		memberId = #{memberId}, name = #{name},phoneNum = #{phoneNum}, position = #{position}, email = #{email}
+		WHERE memberId =#{memberId}
+	</update>
+
+	<delete id="deleteByMid" flushCache="true">
+		DELETE FROM C_MEMBER WHERE
+		memberId = #{memberId}
+	</delete>
+
+</mapper>    
+
