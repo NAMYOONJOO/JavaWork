@@ -50,18 +50,7 @@ CREATE SEQUENCE SEQ_User_u_uid INCREMENT BY 1 START WITH 1;
 
 /* Create Tables */
 
-CREATE TABLE Application
-(
-	a_uid number NOT NULL,
-	a_date date DEFAULT SYSDATE NOT NULL,
-	-- 0 : 미열람
-	-- 1 : 열람
-	a_view number NOT NULL,
-	u_uid number NOT NULL,
-	h_uid number NOT NULL UNIQUE,
-	r_uid number NOT NULL,
-	PRIMARY KEY (a_uid)
-);
+
 
 
 CREATE TABLE board
@@ -123,9 +112,9 @@ CREATE TABLE graphColor
 	gcid number NOT NULL,
 	-- rgb코드
 	-- 
-	color1 varchar2(10) NOT NULL,
-	color2 varchar2(10) NOT NULL,
-	color3 varchar2(10) NOT NULL,
+	color1 varchar2(30) NOT NULL,
+	color2 varchar2(30) NOT NULL,
+	color3 varchar2(30) NOT NULL,
 	PRIMARY KEY (gcid)
 );
 
