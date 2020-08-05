@@ -374,11 +374,19 @@ ALTER TABLE Application
 ;
 
 
+
 ALTER TABLE ResumeFile
     ADD FOREIGN KEY (r_uid)
         REFERENCES Resume (r_uid)
             ON DELETE CASCADE
 ;
 
+
+
+ALTER TABLE ResumeFile
+    ADD FOREIGN KEY (r_uid)
+        REFERENCES Resume (r_uid)
+            ON DELETE CASCADE
+;
 
 
