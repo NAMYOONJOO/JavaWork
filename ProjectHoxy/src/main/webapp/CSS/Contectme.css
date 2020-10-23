@@ -1,0 +1,85 @@
+@charset "UTF-8";
+body{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 300;
+	word-break: keep-all;
+}
+a {
+	color: rgb(107, 107, 131);
+}
+
+#bg3 {
+	/*background: linear-gradient(to right,white 75%,rgba(182, 107, 152,0.3));
+    */
+	/*background: linear-gradient(to right, white 85%, rgba(107, 107, 141, 0.3));
+	*/
+}
+
+#img9 {
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	width: 100%
+}
+
+.tAlign_r {
+	text-align: right;
+}
+
+.contactme_name {
+	font-size: xx-large;
+	font-weight: 500;
+ 	margin-right: 10px
+}
+.contactme_eng_name{
+	vertical-align : bottom;
+	font-weight: 500;
+}
+.fs_large {
+	font-size: large;
+}
+
+.gray_box {
+	background-color: rgba(120, 120, 120, 0.2);
+	font-weight: 100;
+	padding: 15px 30px;
+	border-radius: 8px;
+	margin: 0;
+	font-size: small;
+}
+
+.contact_title {
+	font-size: xx-large;
+	font-weight: bold;
+	margin-top: 60px;
+}
+
+.contact_content {
+	margin: 60px 0;
+	text-align: justify;
+	line-height: 1.8;
+	
+}
+#latest_update{
+	background-color: rgb(245,245,245);
+	text-align: center;
+	padding: 30px 0
+}
+.skill_box{
+	margin-bottom: 30px;
+	text-align: center;
+}
+.ed_content{
+	padding: 30px 20px;
+	/*border-left: 1px solid rgb(182, 107, 152)
+	*/
+}
+.ed_content h2{
+	font-size: x-large;
+	color: rgb(182, 107, 152)
+}
+.ed_content h3{
+	font-size: 90%;
+	font-style: italic;
+}
+.skill_box h2{
+	color: rgb(182, 107, 152)
+}
