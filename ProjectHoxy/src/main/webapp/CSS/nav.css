@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+div.main_nav_div {
+	background: linear-gradient(to right, #aa4b6b43, #6b6b8343, #3b8d9943);
+}
+
+#main_nav li {
+	margin-right: 30px
+}
+
+#main_nav li:hover {
+	color: rgb(255, 193, 58);
+	cursor: pointer;
+}
+
+#main_nav_purple li {
+	margin-right: 30px;
+}
+#main_nav_purple li:hover {
+	color: rgb(182, 107, 152);
+	cursor: pointer;
+}
+
+div.mid_80header {
+	width: 65%;
+	margin:  auto;
+	padding-top: 40px;
+	padding-bottom: 10px;
+	margin-bottom: 100px
+}

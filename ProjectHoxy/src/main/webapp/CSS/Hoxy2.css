@@ -191,7 +191,10 @@ div.mid_80 {
 	background-color: rgb(51,197,237);
 	color: white;
 }
-
+#main_nav_purple, #main_nav{
+	margin-bottom: 100px
+	
+}
 #main_nav li {
 	margin-right: 30px
 }

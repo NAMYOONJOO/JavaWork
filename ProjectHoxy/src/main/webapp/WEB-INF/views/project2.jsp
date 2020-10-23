@@ -66,7 +66,7 @@
 				<h1 class="ff_Noto mg25_bt fs_xlarge fw_bold">One-stop interior
 					platform</h1>
 				<!--<h1 class="ff_Noto mg_t50 mg10_bt">간편한 입사지원과 기업정보공유를 통해</h1>-->
-				<h1 class="ff_Noto mg_t50 mg25_bt">인테리어의 모든 고민을 한번에 해결하세요</h1>
+				<h1 class="ff_Noto mg_t50 mg25_bt">SNS적인 인테리어 정보공유서비스, 쇼핑서비스, 시공서비스를 온라인으로 제공함으로써 인테리어의 모든 고민을 한 번에 해결해 줍니다.</h1>
 				<button class="yellow_border_btn"
 					onclick="window.open('https://youtu.be/jAuwcbxZ_68', 'TEAM5 발표영상');">발표영상 바로보기</button>
 
@@ -87,7 +87,7 @@
 				때문에 업체에 인테리어 시공을 맡기기보다 셀프 도배 방법을 찾아보고 직접 가구를 주문해 조립하며 집을 꾸몄던 소소한 경험이
 				떠올랐고 오늘날 2000년대 이후 미혼율, 이혼율이 높아져 1인 가구의 비중이 높아지는 시대에 평소 어려움을 느꼈던
 				인테리어라는 분야에 변화가 필요하다고 생각하게 되었습니다. 그래서 혼자 생활했을 당시 자주 이용했던 ‘오늘의 집’이라는
-				인테리어 정보서비스 페이지를 떠올리게 되었고 벤치 마킹해 ‘인테리어 원스톱 플랫폼 페이지’를 주제로 프로젝트를 설계하게
+				인테리어 정보서비스 페이지를 떠올리게 되었고 벤치 마킹해 ‘인테리어 원스톱 플랫폼 페이지’를 주제로 Servlet과 연계한 MVC Model 2 기반 웹 애플리케이션을 설계하게
 				되었습니다. <br> <br>&nbsp;&nbsp;프로젝트는 홈페이지에 회원운영서비스를 도입해 회원간
 				SNS 적인 소통방식으로 인테리어 정보를 공유하고, 쇼핑 서비스를 제공함으로써 누구나 쉽게 인테리어라는 주제에 관심을 둘
 				수 있도록 했습니다. 또한, 인테리어 시공정보제공, 예약서비스를 온라인으로 제공함으로써 인테리어 모든 고민을 한 곳에서
@@ -140,7 +140,7 @@
 
 
 				<div class="col-md-6 mg70_bt">
-					<h1 class="ff_Noto fs_xxlarge mg25_bt fw_bold">COMMUNITY</h1>
+					<h1 class="ff_Fredoka fc_blue fs_xxlarge mg25_bt fw_bold">COMMUNITY</h1>
 					<h1 class="ff_Noto fs_xxlarge mg25_bt fw_bold">내가 찾던 지역별 채용공고</h1>
 					<h1 class="ff_Noto mg25_bt fs_large fw_normal lineh_40">
 						기업은 공고 정보입력, 마감날짜 지정을 통해 공고 등록을 하고 자유롭게 정보 수정이 가능합니다. <br>개인회원은
@@ -159,7 +159,7 @@
 
 
 				<div class="col-md-6 mg70_bt">
-					<h1 class="ff_Noto fs_xxlarge mg25_bt fw_bold">STORE</h1>
+					<h1 class="ff_Fredoka fc_blue fs_xxlarge mg25_bt fw_bold">STORE</h1>
 					<h1 class="ff_Noto fs_xxlarge mg25_bt fw_bold">간편한 입사지원</h1>
 					<h1 class="ff_Noto mg25_bt fs_large fw_normal lineh_40">
 						개인회원은 로그인 후 공고, 이력서 선택후 즉시지원을 통해 클릭 한번으로 간편한 입사지원을 할 수 있습니다. 개인은
@@ -178,7 +178,7 @@
 
 				<!--  -->
 				<div class="col-md-7 mg70_bt">
-					<h1 class="ff_Noto fs_xxlarge mg25_bt fw_bold mg_l30">INTERIOR
+					<h1 class="ff_Fredoka fc_blue fs_xxlarge mg25_bt fw_bold mg_l30">INTERIOR
 					</h1>
 					<h1 class="ff_Noto fs_xxlarge mg25_bt fw_bold mg_l30">온라인 인테리어
 						시공</h1>
