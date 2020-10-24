@@ -6,7 +6,8 @@ package common;
  */
 public class D {
    public static String DRIVER = "oracle.jdbc.driver.OracleDriver";
-   public static String URL ="jdbc:oracle:thin:@localhost:1521:XE";
+//   public static String URL ="jdbc:oracle:thin:@localhost:1521:XE";
+   public static String URL ="jdbc:oracle:thin:@DESKTOP-UUARNP1:1521:XE";
    public static String UID = "scott0316";
    public static String UPW = "tiger0316";
    
