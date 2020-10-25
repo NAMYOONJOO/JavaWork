@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 footer {
 	background-color: rgb(248, 248, 248);
 	height: 200px;
@@ -9,7 +10,12 @@ footer {
 .ff_Noto {
 	font-family: 'Noto Serif KR', serif;
 }
-
+#main1 a{
+	font-size: small;
+    line-height: 1.5;
+    font-style: italic;
+	color: rgb(219,148,0)
+}
 div.mid_80 {
 	width: 65%;
 	margin: 40px auto;
@@ -20,7 +26,9 @@ div.mid_70 {
 	margin: 40px auto;
 }
 
-
+div#main1 h1{
+	line-height: 1.5
+}
 
 .width_20 {
 	width: 20%;
@@ -120,6 +128,9 @@ div.mid_70 {
 	padding: 90px 20px;
 }
 
+a{
+	 color :rgb(219, 165, 48);
+}
 .side_btn {
 	display: inherit;
 	width: 180px;

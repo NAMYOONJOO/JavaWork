@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
 <!-- 부트스트랩 -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -34,32 +35,51 @@
 
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="${pageContext.request.contextPath }/JS/yj.js"></script>
+<script src="${pageContext.request.contextPath }/JS/nav.js"></script>
+<script src="${pageContext.request.contextPath }/JS/sidenav.js"></script>
 
 
 <title>남윤주_Nam Yoon Joo</title>
 </head>
 <body id="bg3">
 	<div id="side_bar_purple">
-		<div class="side_btn side_btn_p ff_Noto" id="nav_box1">INTRODUCE</div>
-		<div class="side_btn side_btn_p ff_Noto" id="nav_box2">SKILL</div>
-		<div class="side_btn side_btn_p ff_Noto" id="nav_box3">PROJECT</div>
+		<div class="side_btn side_btn_p ff_Noto" id="nav_box1">CONTACT
+			ME</div>
+		<div class="side_btn side_btn_p ff_Noto" id="nav_box2">INTRODUCE</div>
+		<div class="side_btn side_btn_p ff_Noto" id="nav_box3">SKILL</div>
+		<div class="side_btn side_btn_p ff_Noto" id="nav_box4">PROJECT</div>
 		<div class="side_btn side_btn_p ff_Noto" id="nav_box5">EDUCATION</div>
 	</div>
-	<div class="main_nav_div">
+	<div class="main_nav_div nav_bg1">
 		<div class="mid_80header">
 			<nav id="main_nav_purple">
 				<ul>
 					<li class="inline fw_bold "
-						onclick="location.href='http://www.runzhu.shop/ProjectHoxy/contactme'">Contact
-						me</li>
-					<li class="inline fw_bold"
-						onclick="location.href='http://www.runzhu.shop/ProjectHoxy/'">Project</li>
+						onclick="location.href='http://www.runzhu.shop/yoonjoo'">
+						That's me</li>
+					<li class="inline fw_bold" id="nav_project">Project</li>
 				</ul>
 			</nav>
+
 		</div>
 	</div>
-	<div class="mid_80 row">
+
+	<div class="sub_nav">
+
+		<nav>
+			<ul>
+				<li class="inline"><a
+					href="http://www.runzhu.shop/yoonjoo/project_next">리크루팅 취업 플랫폼
+						'NEXT'</a></li>
+				<li class="inline">/</li>
+				<li class="inline"><a
+					href="http://www.runzhu.shop/yoonjoo/project_yourhome">원스톱 인테리어
+						플랫폼 '너네 집'</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class="mid_80 row" id="nav_position_1">
 		<img class="col-md-3 mg50_bt" src="https://i.imgur.com/978FkMN.png">
 		<div class="col-md-12 row">
 
@@ -99,7 +119,7 @@
 
 	<!--  -->
 	<div class="mid_80">
-		<div class="row">
+		<div class="row" id="nav_position_2">
 			<h1 class=" contact_title col-md-3">INTRODUCE</h1>
 			<div class="contact_content col-md-9">
 				<h1>안녕하세요. 어려움을 피하지 않고 용기 있게 맞설 도전정신을 갖고 있는 웹 개발자 남 윤 주입니다. 어떤
@@ -116,7 +136,7 @@
 
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" id="nav_position_3">
 			<h1 class="contact_title col-md-3">SKILL</h1>
 			<div class="contact_content col-md-9 row">
 				<div class="skill_box col-md-3">
@@ -148,15 +168,15 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row" id="nav_position_4">
 			<h1 class="contact_title col-md-12">PROJECT</h1>
 			<div class="contact_content myProj col-md-12 row">
 				<div class="pj_content col-md-3">
 					<h1>2020.07.14 ~ 2020.08.05</h1>
 				</div>
 				<div class="pj_content col-md-9">
-					<a href="http://www.runzhu.shop/ProjectHoxy/">리크루팅 취업 플랫폼
-						'NEXT'</a> <img class="click_pj"
+					<a href="http://www.runzhu.shop/yoonjoo/project_next">리크루팅 취업
+						플랫폼 'NEXT'</a> <img class="click_pj"
 						src="https://media0.giphy.com/media/KecDcIs9qrqennrxGQ/giphy.gif">
 					<h3>기업, 일반회원 서비스, 체계적인 이력서 관리, 다양한 채용공고 제공, 간편한 입사지원, 유용한
 						면접후기, 기업후기등 커뮤니티서비스 제공하는 SpringFramework 기반 MVC모델의 취업 플랫폼 웹페이지 개발
@@ -194,7 +214,8 @@
 					<h1>2020.05.25 ~ 2020.06.15</h1>
 				</div>
 				<div class="pj_content col-md-9">
-					<a href="#">원스톱 인테리어 플랫폼 '너네 집'</a> <img class="click_pj"
+					<a href="http://www.runzhu.shop/yoonjoo/project_yourhome">원스톱
+						인테리어 플랫폼 '너네 집'</a> <img class="click_pj"
 						src="https://media0.giphy.com/media/KecDcIs9qrqennrxGQ/giphy.gif">
 
 					<h3>SNS적인 인테리어 정보공유서비스, 쇼핑서비스, 시공서비스를 온라인으로 제공하는 Servlet과 연계한
@@ -268,7 +289,7 @@
 			<h1 class="contact_title col-md-3">EXPERIENCE</h1>
 			<div class="contact_content col-md-9 row"></div>
 		</div>-->
-		<div class="row">
+		<div class="row" id="nav_position_5">
 			<h1 class="contact_title col-md-3">EDUCATION</h1>
 			<div class="contact_content col-md-9 row">
 				<div class="ed_content col-md-12">
@@ -290,8 +311,9 @@
 				</div>
 			</div>
 		</div>
-		<div id="latest_update" class="mid_80">Latest Updated 2020.10.23
-		</div>
+	</div>
+	<div id="latest_update" class="mid_80">Latest Updated 2020.10.25
+	</div>
 </body>
 </html>
 

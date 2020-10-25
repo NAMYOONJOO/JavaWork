@@ -33,9 +33,15 @@ public class HomeController {
 
 		model.addAttribute("serverTime", formattedDate);
 
-		return "imrunzhu";
+		return "thatsme";
 	}
 
+	@RequestMapping(value = "/project_next", method = RequestMethod.GET)
+	public String project_next(Locale locale, Model model) {
+
+		return "project_next";
+	}
+	
 	@RequestMapping(value = "/flowChart", method = RequestMethod.GET)
 	public String flowChart(Locale locale, Model model) {
 
@@ -73,15 +79,10 @@ public class HomeController {
 	}
 
 
-	@RequestMapping(value = "/contactme", method = RequestMethod.GET)
-	public String contactme(Locale locale, Model model) {
 
-		return "contactme";
-	}
+	@RequestMapping(value = "/project_yourhome", method = RequestMethod.GET)
+	public String project_yourhome(Locale locale, Model model) {
 
-	@RequestMapping(value = "/project2", method = RequestMethod.GET)
-	public String project2(Locale locale, Model model) {
-
-		return "project2";
+		return "project_yourhome";
 	}
 }

@@ -18,6 +18,8 @@
 	href="${pageContext.request.contextPath }/CSS/reset.css" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath }/CSS/Hoxy.css" />
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/CSS/nav.css" />
 
 
 <link
@@ -32,6 +34,7 @@
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="${pageContext.request.contextPath }/JS/yj.js"></script>
+<script src="${pageContext.request.contextPath }/JS/nav.js"></script>
 
 
 <title>남윤주_Nam Yoon Joo</title>
@@ -47,15 +50,33 @@
 		<div class="side_btn ff_Noto" id="nav_box7">시연영상</div>
 		<div class="side_btn ff_Noto" id="nav_box8">GitHub</div>
 	</div>
-	<div class="mid_80">
-		<nav id="main_nav">
+	
+	<div class="main_nav_div nav_bg2">
+		<div class="mid_80header">
+			<nav id="main_nav_purple">
+				<ul>
+					<li class="inline fw_bold "
+						onclick="location.href='http://www.runzhu.shop/yoonjoo'">
+						That's me</li>
+					<li class="inline fw_bold" id="nav_project"
+						>Project</li>
+				</ul>
+			</nav>
+
+		</div>
+	</div>
+	
+	<div class="sub_nav">
+
+		<nav>
 			<ul>
-				<li class="inline fw_bold " onclick="location.href='http://www.runzhu.shop/ProjectHoxy/contactme'">Contact
-					me</li>
-				<li class="inline fw_bold" onclick="location.href='http://www.runzhu.shop/ProjectHoxy/'">Project</li>
+				<li class="inline"><a href="http://www.runzhu.shop/yoonjoo/project_next">리크루팅 취업 플랫폼 'NEXT'</a></li>
+				<li class="inline"> / </li>
+				<li class="inline"><a href="http://www.runzhu.shop/yoonjoo/project_yourhome">원스톱 인테리어 플랫폼 '너네 집'</a></li>
 			</ul>
 		</nav>
 	</div>
+	
 	<div class="mid_80">
 		<div class="row">
 			<div class="col-md-6" id="main1">
@@ -69,10 +90,10 @@
 					onclick="window.open('http://www.runzhu.shop', 'NEXT');">SITE
 					VIEW</button>-->
 				<button class="yellow_border_btn"
-					onclick="window.open('http://www.runzhu.shop', 'NEXT');">발표영상 바로보기</button>
-				<button class="yellow_border_btn"
-					onclick="window.open('http://www.runzhu.shop', 'NEXT');">시연영상 바로보기</button>
-
+					onclick="window.open('http://www.runzhu.shop', 'NEXT');">SITE VIEW</button>
+				<div class="mg10_bt"></div>
+				<a href="https://www.youtube.com/watch?v=hq-WDDuPS-E&feature=emb_title">발표영상 바로보기</a><a> / </a>
+				<a href="https://www.youtube.com/watch?v=a77TM839-xQ&feature=emb_title">시연영상 바로보기</a>
 			</div>
 			<div class="col-md-6" id="main2">
 				<div id="img1"></div>

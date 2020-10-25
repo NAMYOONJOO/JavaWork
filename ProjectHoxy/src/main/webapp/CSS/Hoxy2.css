@@ -5,7 +5,9 @@ footer {
 	height: 200px;
 	text-align: center;
 }
-
+a{
+	color: rgb(11,109,138);
+}
 .ff_Noto {
 	font-family: 'Noto Serif KR', serif;
 }
@@ -19,6 +21,11 @@ div.mid_80 {
 	width: 65%;
 	margin: 40px auto;
 }
+
+div#main1 h1{
+	line-height: 1.5
+}
+
 
 .width_20 {
 	width: 20%;
@@ -191,18 +198,7 @@ div.mid_80 {
 	background-color: rgb(51,197,237);
 	color: white;
 }
-#main_nav_purple, #main_nav{
-	margin-bottom: 100px
-	
-}
-#main_nav li {
-	margin-right: 30px
-}
 
-#main_nav li:hover {
-	color: rgb(51,197,237);
-	cursor: pointer;
-}
 
 .yello_box h1 {
 	color: white;
