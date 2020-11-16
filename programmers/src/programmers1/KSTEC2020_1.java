@@ -24,6 +24,7 @@ public class KSTEC2020_1 {
 }
 class Solution {
 	
+	
 	private int result = 0;
 	
 	
